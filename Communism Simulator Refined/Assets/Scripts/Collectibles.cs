@@ -9,7 +9,7 @@ public class Collectibles : MonoBehaviour
     ResourceManager rm;
     Transform player;
     public bool canCollect;
-
+    
     [SerializeField]
     ParticleSystem ps;
 
