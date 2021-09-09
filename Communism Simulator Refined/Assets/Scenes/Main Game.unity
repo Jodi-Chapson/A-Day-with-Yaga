@@ -377,8 +377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760724974e8c7bb46a854cbc1d6a2ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 2
-  speedMod: 0.65
+  movespeed: 1
+  diagonalMod: 0.5
+  sprintMod: 0
+  sprintSpeed: 2
   heading: {x: 0, y: 0, z: 0}
   lerp: 0.5
   canMove: 0
@@ -587,7 +589,7 @@ MonoBehaviour:
   stonemax: 0
   wood: {fileID: 0}
   stone: {fileID: 0}
-  collectionDistance: 0
+  collectionDistance: 0.5
   woodstrike: {fileID: 0}
   stonestrike: {fileID: 0}
   manager: {fileID: 0}
@@ -863,8 +865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95139868ae73848439fbf76fc8325109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcetype: 0
-  canCollect: 0
+  resourcetype: 1
+  canCollect: 1
   ps: {fileID: 0}
 --- !u!4 &1092125735
 Transform:
@@ -1167,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcetype: 0
-  canCollect: 0
+  canCollect: 1
   ps: {fileID: 0}
 --- !u!65 &1880709201
 BoxCollider:

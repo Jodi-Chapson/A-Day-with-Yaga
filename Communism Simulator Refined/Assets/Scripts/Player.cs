@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("References")]
+
+    [Header("Set Variables")] //variables that must be set before the game is played
     public float movespeed = 3f;
-    public float speedMod = 0.5f;
-    //public Animator playerAnim;
-    public Vector3 heading;
+    public float diagonalMod = 0.5f;
+    public float sprintSpeed; //the variable manipulated in inspector (must be bigger than 1)
     public float lerp;
     public bool canMove;
 
+    [Header("Independent Variables")] //the variables that change without player input
+    public float sprintMod; //the changing speed variable
+    public Vector3 heading;
     Vector3 forward, right;
+
+    
+    
+   
+    
+    //public Animator playerAnim;
+    
+    
+    
+
+    
 
     public void Start()
     {
@@ -24,6 +40,7 @@ public class Player : MonoBehaviour
 
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         canMove = true;
+        sprintMod = 1;
     }
 
     public void Update()
@@ -39,6 +56,19 @@ public class Player : MonoBehaviour
         else
         {
             //playerAnim.SetBool("isMoving", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //is sprinting
+            sprintMod = sprintSpeed;
+            
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            //is not sprinting
+            sprintMod = 1;
+
         }
 
         Vector3 currentheading;
@@ -60,13 +90,13 @@ public class Player : MonoBehaviour
         if (direction.x != 0 && direction.z != 0)
         {
             //character is going diagonal
-            rightMove = right * movespeed * speedMod * Time.deltaTime * Input.GetAxis("HorizontalKey");
-            upMove = forward * movespeed * speedMod * Time.deltaTime * Input.GetAxis("VerticalKey");
+            rightMove = right * movespeed * diagonalMod * sprintMod * Time.deltaTime * Input.GetAxis("HorizontalKey");
+            upMove = forward * movespeed * diagonalMod * sprintMod * Time.deltaTime * Input.GetAxis("VerticalKey");
         }
         else
         {
-            rightMove = right * movespeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
-            upMove = forward * movespeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+            rightMove = right * movespeed * sprintMod * Time.deltaTime * Input.GetAxis("HorizontalKey");
+            upMove = forward * movespeed * sprintMod * Time.deltaTime * Input.GetAxis("VerticalKey");
         }
 
 

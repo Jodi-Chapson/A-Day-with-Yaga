@@ -16,25 +16,39 @@ public class Collectibles : MonoBehaviour
     private void Start()
     {
         rm = GameObject.Find("Game Manager").GetComponent<ResourceManager>();
+
+        if (resourcetype == 0)
+        {
+            rm.woodmax++;
+        
+        }
+        else if (resourcetype == 1)
+        {
+            rm.stonemax++;
+        }
+
+
         player = GameObject.Find("Player").transform;
-        ps = GetComponentInChildren<ParticleSystem>();
-        ps.enableEmission = false;
+        //ps = GetComponentInChildren<ParticleSystem>();
+        //ps.enableEmission = false;
     }
 
     private void Update()
     {
+        
+
         if (canCollect)
         {
-            //Debug.Log(Vector3.Distance(this.transform.position, player.position));
+            
 
             if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance + 0.5)
             {
 
-                ps.enableEmission = true;
+                //ps.enableEmission = true;
             }
             else
             {
-                ps.enableEmission = false;
+                //ps.enableEmission = false;
             }
         }
     }
@@ -63,12 +77,15 @@ public class Collectibles : MonoBehaviour
     {
         if (canCollect)
         {
-            Debug.Log(Vector3.Distance(this.transform.position, player.position));
+            //Debug.Log(Vector3.Distance(this.transform.position, player.position));
 
             if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance)
             {
 
-                CollectResource();
+                //CollectResource();
+                //temporary fix
+                Destroy(gameObject);
+
             }
         }
 
