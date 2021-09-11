@@ -19,8 +19,8 @@ public class InteractionData
     public int wantedFish;
 
     
-    public string[] OpeningDialogue;
-    public string[] ClosingDialogue;
+    public string OpeningDialogue;
+    public string ClosingDialogue;
     //normal dialogues and commentary from Yaga only use OpeningDialogue
     //mostly applies to tasks - Closing Dialogue is presented when a task is completed :D haha fuk me
 

@@ -25,6 +25,9 @@ public class Interactables : MonoBehaviour
             //player is touching object for the first time. 
 
             //display opening dialogue 
+            im.OpeningDialogue(data);
+
+
 
             data.isTriggered = true;
         }
@@ -82,7 +85,8 @@ public class Interactables : MonoBehaviour
                 rm.fishNum -= data.wantedFish;
 
                 //any effects of the task are set in motion
-                im.ConcludeInteraction(data.TaskID);
+                //im.ConcludeInteraction(data.TaskID);
+                im.ConcludingDialogue(data);
             }
         }
     }
