@@ -62,7 +62,7 @@ public class Interactables : MonoBehaviour
             }
 
 
-                int completedRequirements = 0;
+            int completedRequirements = 0;
 
             //if a requirement is wood
             if (data.wantedWood != 0)
@@ -113,6 +113,137 @@ public class Interactables : MonoBehaviour
                 //any effects of the task are set in motion
                 //im.ConcludeInteraction(data.TaskID);
                 im.ConcludingDialogue(data);
+            }
+            else if (completedRequirements < data.NumOfRequirements)
+            {
+                //stuff is unfulfilled
+                string ponder;
+                string wood = "";
+                string stone = "";
+                string berries = "";
+                string fish = "";
+                int numberofStrings = 0;
+                ponder = "I still need ";
+
+                if (data.wantedWood != 0)
+                {
+                    
+                    int remainder = data.wantedWood - rm.woodNum;
+                    if (remainder > 0)
+                    {
+                        
+                        if (remainder == 1)
+                        {
+                            wood += remainder + " piece of wood";
+                            
+                        }
+                        else
+                        {
+                            wood += remainder + " pieces of wood";
+                            
+                        }
+                        numberofStrings++;
+                    }
+                }
+
+                if (data.wantedStone != 0)
+                {
+                    int remainder = data.wantedStone - rm.stoneNum;
+                    if (remainder >0)
+                    {
+                        if (numberofStrings > 0)
+                        { 
+                            if (data.NumOfRequirements - numberofStrings == 1)
+                            {
+                                stone += " and ";
+                            }
+                            else
+                            {
+                                stone += ", ";
+
+                            }
+                            
+                        }
+
+                        if (remainder == 1)
+                        {
+                            stone += remainder + " stone";
+                        }
+                        else
+                        {
+                            stone += remainder + " stones";
+                        }
+
+                        numberofStrings++;
+
+                    }
+
+
+                }
+
+                if (data.wantedBerries != 0 )
+                {
+                    int remainder = data.wantedBerries - rm.berriesNum;
+                    if (remainder > 0)
+                    {
+                        if (numberofStrings > 0)
+                        {
+                            if (data.NumOfRequirements - numberofStrings == 1)
+                            {
+                                berries += " and ";
+                            }
+                            else
+                            {
+                                berries += ", ";
+                            }
+                        }
+
+                        if (remainder == 1)
+                        {
+                            berries += remainder + " berry";
+                        }
+                        else
+                        {
+                            berries += remainder + " berries";
+                        }
+
+                        numberofStrings++;
+                    }
+                }
+
+                if (data.wantedFish != 0)
+                {
+                    int remainder = data.wantedFish - rm.fishNum;
+                    if (remainder > 0)
+                    {
+                        if (numberofStrings > 0)
+                        {
+                            if (data.NumOfRequirements - numberofStrings == 1)
+                            {
+                                fish += " and ";
+                            }
+                            else
+                            {
+                                fish += ", ";
+                            }
+                        }
+
+                        if (remainder == 1)
+                        {
+                            fish += remainder + " fish";
+                        }
+                        else
+                        {
+                            fish += remainder + " fish";
+                        }
+
+                        numberofStrings++;
+                    }
+                }
+
+                ponder += wood + stone + berries + fish + ".";
+                im.PonderDialogue(ponder);
+
             }
         }
     }

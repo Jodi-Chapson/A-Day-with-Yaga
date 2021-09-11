@@ -53,11 +53,28 @@ public class InteractionManager : MonoBehaviour
     {
         //initiates opening dialogue
         PlayerSpeechObject.SetActive(true);
-        PlayerText.text = Data.OpeningDialogue;
+        //PlayerText.text = Data.OpeningDialogue;
+        StopAllCoroutines();
+        StartCoroutine(AnimateSentence(Data.OpeningDialogue, PlayerText));
 
         dialogueActive = true;
         activedialogue = PlayerSpeechObject;
         clicks = 0;
+
+    }
+
+    public void PonderDialogue (string sentence)
+    {
+        //initiate Yaga thinking about whats missing
+
+        PlayerSpeechObject.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(AnimateSentence(sentence, PlayerText));
+
+        dialogueActive = true;
+        activedialogue = PlayerSpeechObject;
+        clicks = 0;
+
 
     }
 
@@ -66,7 +83,9 @@ public class InteractionManager : MonoBehaviour
     {
         // initiates end dialogue
         PlayerSpeechObject.SetActive(true);
-        PlayerText.text = Data.ClosingDialogue;
+        //PlayerText.text = Data.ClosingDialogue;
+        StopAllCoroutines();
+        StartCoroutine(AnimateSentence(Data.ClosingDialogue, PlayerText));
 
         dialogueActive = true;
         activedialogue = PlayerSpeechObject;
@@ -91,5 +110,17 @@ public class InteractionManager : MonoBehaviour
             bridge.SetActive(false);
         }
         
+    }
+
+    public IEnumerator AnimateSentence(string dialogue, Text targettext)
+    {
+        targettext.text = "";
+
+        foreach (char letter in dialogue.ToCharArray())
+        {
+            targettext.text += letter;
+            yield return new WaitForSeconds(0.05f);
+        }
+
     }
 }
