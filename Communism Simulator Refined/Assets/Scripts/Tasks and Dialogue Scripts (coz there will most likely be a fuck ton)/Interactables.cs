@@ -55,6 +55,11 @@ public class Interactables : MonoBehaviour
                 im.OpeningDialogue(data);
                 data.isTriggered = true;
                 
+
+                if (!data.hasRequirement)
+                {
+                    Destroy(this.GetComponent<Interactables>());
+                }
             }
         }
         else

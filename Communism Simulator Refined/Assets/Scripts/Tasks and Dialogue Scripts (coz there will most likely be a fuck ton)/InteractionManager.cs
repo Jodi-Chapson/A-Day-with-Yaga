@@ -9,7 +9,10 @@ public class InteractionManager : MonoBehaviour
     public Player player;
     public GameObject PlayerSpeechObject;
     public RectTransform PlayerSpeechBubble;
+    public GameObject BettySpeechObject;
+    public GameObject BettySpeechBubble;
     public Text PlayerText;
+    public Text BettyText;
 
     [Header("Interactables References")]
     public GameObject bridge;
@@ -59,15 +62,37 @@ public class InteractionManager : MonoBehaviour
     public void OpeningDialogue (InteractionData Data)
     {
         //initiates opening dialogue
-        PlayerSpeechObject.SetActive(true);
-        //PlayerText.text = Data.OpeningDialogue;
-        StopAllCoroutines();
-        StartCoroutine(AnimateSentence(Data.OpeningDialogue, PlayerText));
 
-        dialogueActive = true;
-        activedialogue = PlayerSpeechObject;
-        clicks = 0;
-        player.canMove = false;
+        if (Data.OpeningCharacterID == 0)
+        {
+            //player speaking
+            PlayerSpeechObject.SetActive(true);
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(Data.OpeningDialogue, PlayerText));
+
+            dialogueActive = true;
+            activedialogue = PlayerSpeechObject;
+            clicks = 0;
+            player.canMove = false;
+
+
+
+
+        }
+        else if (Data.OpeningCharacterID == 1)
+        {
+            //betty speaking
+
+            BettySpeechObject.SetActive(true);
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(Data.OpeningDialogue, BettyText));
+
+            dialogueActive = true;
+            activedialogue = BettySpeechObject;
+            clicks = 0;
+            player.canMove = false;
+        }
+        
 
     }
 
@@ -91,18 +116,39 @@ public class InteractionManager : MonoBehaviour
     public void ConcludingDialogue(InteractionData Data)
     {
         // initiates end dialogue
-        PlayerSpeechObject.SetActive(true);
-        //PlayerText.text = Data.ClosingDialogue;
-        StopAllCoroutines();
-        StartCoroutine(AnimateSentence(Data.ClosingDialogue, PlayerText));
 
-        dialogueActive = true;
-        activedialogue = PlayerSpeechObject;
-        clicks = 0;
+        if (Data.OpeningCharacterID == 0)
+        {
+            PlayerSpeechObject.SetActive(true);
 
-        isConclusion = true;
-        concludingTask = Data.TaskID;
-        player.canMove = false;
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(Data.ClosingDialogue, PlayerText));
+
+            dialogueActive = true;
+            activedialogue = PlayerSpeechObject;
+            clicks = 0;
+
+            isConclusion = true;
+            concludingTask = Data.TaskID;
+            player.canMove = false;
+        }
+        else if (Data.OpeningCharacterID == 1)
+        {
+            BettySpeechObject.SetActive(true);
+
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(Data.ClosingDialogue, BettyText));
+
+            dialogueActive = true;
+            activedialogue = BettySpeechObject;
+            clicks = 0;
+
+            isConclusion = true;
+            concludingTask = Data.TaskID;
+            player.canMove = false;
+        }
+            
+        
 
     }
     public void ConcludeInteraction(int taskID)
@@ -114,11 +160,6 @@ public class InteractionManager : MonoBehaviour
         //may initiate opening dialogue of next quest
 
 
-        if (taskID == 0)
-        {
-            Debug.Log("bridge built");
-            bridge.SetActive(false);
-        }
         
     }
 
