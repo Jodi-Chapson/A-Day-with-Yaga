@@ -57,18 +57,14 @@ public class Interactables : MonoBehaviour
                     Destroy(this.GetComponent<Interactables>());
                 }
             }
-            else
-            {
-                Debug.Log("ding ding");
-            }
+            
         }
         else
         {
             //player has interacted with this object before - hence check requirements and display appropriate dialogue
             //this object is for sure a task.
 
-            Debug.Log("nani" + data.TaskID);
-
+           
             if (im.dialogueActive)
             {
                 return;

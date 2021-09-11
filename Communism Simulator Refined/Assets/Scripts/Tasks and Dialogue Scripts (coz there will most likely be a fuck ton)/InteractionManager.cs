@@ -18,6 +18,7 @@ public class InteractionManager : MonoBehaviour
     public GameObject bridge;
     public GameObject BettyTaskID2;
     public GameObject BettyTaskID3;
+    public GameObject BettyTaskID6;
 
     [Header("Other Variables")]
     public int concludingTask;
@@ -166,24 +167,36 @@ public class InteractionManager : MonoBehaviour
             //Betty task 1
             BettyTaskID2.SetActive(false);
             BettyTaskID3.SetActive(true);
-            StartCoroutine(BettyPause());
+            StartCoroutine(BettyPause(1));
             
         }
         else if (taskID == 3)
         {
             //Betty task 2
+            BettyTaskID3.SetActive(false);
+            BettyTaskID6.SetActive(true);
+            StartCoroutine(BettyPause(2));
+            
+
         }
         
         
     }
 
-    public IEnumerator BettyPause()
+    public IEnumerator BettyPause(int task)
     {
         
         yield return new WaitForSeconds(0.1f);
-
-        BettyTaskID3.GetComponent<Interactables>().TriggerInteraction();
+        if (task == 1)
+        {
+            BettyTaskID3.GetComponent<Interactables>().TriggerInteraction();
+        }
+        else if (task == 2)
+        {
+            BettyTaskID6.GetComponent<Interactables>().TriggerInteraction();
+        }
     }
+
 
     public IEnumerator AnimateSentence(string dialogue, Text targettext)
     {

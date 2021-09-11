@@ -2706,6 +2706,7 @@ MonoBehaviour:
   bridge: {fileID: 2144960854}
   BettyTaskID2: {fileID: 1318348772}
   BettyTaskID3: {fileID: 389705771}
+  BettyTaskID6: {fileID: 1471771624}
   concludingTask: 0
   dialogueActive: 0
   isConclusion: 0
@@ -7818,6 +7819,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5958362384829529401, guid: d2006e999e1651c489c173433c7dc818, type: 3}
+--- !u!1 &1471771624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1471771625}
+  - component: {fileID: 1471771627}
+  - component: {fileID: 1471771626}
+  m_Layer: 0
+  m_Name: TaskID 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1471771625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471771624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1457279309}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471771626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471771624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca91cd7e3a46ba48b1f23a3a713915b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rm: {fileID: 0}
+  im: {fileID: 0}
+  data:
+    TaskID: 6
+    isTriggered: 0
+    triggerdistance: 4
+    hasRequirement: 1
+    NumOfRequirements: 2
+    wantedWood: 0
+    wantedStone: 0
+    wantedBerries: 2
+    wantedFish: 2
+    OpeningCharacterID: 1
+    OpeningDialogue: 2 fish and 2 berries for dinner please!
+    ClosingCharacterID: 1
+    ClosingDialogue: thank you, love!
+  isClick: 1
+--- !u!65 &1471771627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471771624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7868383, y: 2.3819873, z: 2.0359232}
+  m_Center: {x: 0.039461862, y: 0.89278793, z: 2.494047}
 --- !u!1 &1480684748
 GameObject:
   m_ObjectHideFlags: 0
