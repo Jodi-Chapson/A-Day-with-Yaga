@@ -9,6 +9,7 @@ public class InteractionData
     public int TaskID; //unique taskID, which should be indicated in the google docs, if those are up to date
     
     public bool isTriggered; //means the player has interacted with this object
+    public float triggerdistance;
 
     public bool hasRequirement;
     public int NumOfRequirements; //so if a task wants only wood, this will be 1. if it wants say, wood, stone and fish, this will be 3. based on number of required unique resources

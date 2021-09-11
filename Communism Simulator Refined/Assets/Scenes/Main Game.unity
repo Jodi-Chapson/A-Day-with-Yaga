@@ -660,7 +660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &176882964
 Transform:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ Transform:
   - {fileID: 1723072618}
   - {fileID: 2052667429}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &178097597
 PrefabInstance:
@@ -783,14 +783,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185148636}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.39, y: 0.2, z: -1.261}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.822, y: 0.2, z: 6.8599997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 283631844}
   m_Father: {fileID: 176882964}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &185148638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -834,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1001 &200945818
 PrefabInstance:
@@ -1448,7 +1449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375200129
 GameObject:
@@ -1766,19 +1767,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1658755056}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &438318944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438318942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.46255, y: 0.31364152, z: 1.0264368}
-  m_Center: {x: 0.044022977, y: 0.63001233, z: -0.022542745}
 --- !u!1 &448358617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,14 +1793,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448358617}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: 0.2, z: -0.4}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.242, y: 0.2, z: 7.7209997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1878719214}
   m_Father: {fileID: 176882964}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &448358619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1856,6 +1844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1001 &453765175
 PrefabInstance:
@@ -4676,6 +4665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 1
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!4 &1092125735
 Transform:
@@ -4684,14 +4674,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092125732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.015, y: 0.2, z: 0.09}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.21, y: 0.2, z: 4.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1035500355}
   m_Father: {fileID: 176882964}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1092125736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5167,7 +5157,7 @@ Transform:
   - {fileID: 2076941083}
   - {fileID: 1174324095}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197847724
 PrefabInstance:
@@ -5401,7 +5391,7 @@ Transform:
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1258420059
 PrefabInstance:
@@ -5899,14 +5889,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414035380}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.68, y: 0.2, z: 0.09}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -12.544999, y: 0.2, z: 4.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1970876617}
   m_Father: {fileID: 176882964}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1414035382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5950,6 +5940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 1
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1001 &1421154837
 PrefabInstance:
@@ -6046,14 +6037,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444316841}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.878, y: 0.2, z: -1.261}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -14.31, y: 0.2, z: 6.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1976636552}
   m_Father: {fileID: 176882964}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1444316843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6097,6 +6088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1001 &1457279308
 PrefabInstance:
@@ -6332,6 +6324,7 @@ MonoBehaviour:
   data:
     TaskID: 1
     isTriggered: 0
+    triggerdistance: 1.5
     hasRequirement: 1
     NumOfRequirements: 2
     wantedWood: 2
@@ -6341,6 +6334,41 @@ MonoBehaviour:
     OpeningDialogue: my fireplace :( need 2 wood, 3 stone
     ClosingDialogue: yay, fire >:D
   isClick: 1
+--- !u!1 &1483534426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2006e999e1651c489c173433c7dc818,
+    type: 3}
+  m_PrefabInstance: {fileID: 1658755056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483534427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483534426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95139868ae73848439fbf76fc8325109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcetype: 2
+  canCollect: 1
+  berries: {fileID: 438318942}
+  ps: {fileID: 0}
+--- !u!65 &1483534428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483534426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &1506993485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 185300, guid: 105b83a46d287294bbe7892a1e1f2ea3,
@@ -6509,6 +6537,81 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1542036445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542036448}
+  - component: {fileID: 1542036447}
+  - component: {fileID: 1542036446}
+  m_Layer: 0
+  m_Name: Fishing Spot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1542036446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542036445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca91cd7e3a46ba48b1f23a3a713915b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rm: {fileID: 0}
+  im: {fileID: 0}
+  data:
+    TaskID: 7
+    isTriggered: 0
+    triggerdistance: 1.5
+    hasRequirement: 1
+    NumOfRequirements: 2
+    wantedWood: 2
+    wantedStone: 0
+    wantedBerries: 1
+    wantedFish: 0
+    OpeningDialogue: my fishing rod got destroyed :( i need 2 wood 1 berry
+    ClosingDialogue: COME TO PAPPY, FISHES-
+  isClick: 1
+--- !u!136 &1542036447
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542036445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!4 &1542036448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542036445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.82, y: 0.06, z: -3.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1791377824}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596010776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 148516, guid: 7710ce4a7ee932b4a86742119e3babae,
@@ -6561,14 +6664,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616898062}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.92, y: 0.2, z: -0.4}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -14.352, y: 0.2, z: 7.7209997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1302704170}
   m_Father: {fileID: 176882964}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1616898064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6612,6 +6715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!4 &1620340196 stripped
 Transform:
@@ -6729,22 +6833,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2429719
+      value: -16.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.004029274
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5941682
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.73307717
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
@@ -6754,7 +6858,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.68014544
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
@@ -6769,7 +6873,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -85.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
@@ -6780,6 +6884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7344061930997440713, guid: d2006e999e1651c489c173433c7dc818,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4973139536660729289, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
@@ -6794,7 +6903,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7870087916386569459, guid: d2006e999e1651c489c173433c7dc818,
         type: 3}
@@ -6898,14 +7007,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723072617}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.35, y: 0.2, z: 0.34}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.782001, y: 0.2, z: 8.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1053212413}
   m_Father: {fileID: 176882964}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1723072619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6949,6 +7058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1 &1725412660
 GameObject:
@@ -7153,14 +7263,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748051716}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.917, y: 0.2, z: -1.261}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.349, y: 0.2, z: 6.8599997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 558875424}
   m_Father: {fileID: 176882964}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1748051718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7204,6 +7314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1 &1761447600
 GameObject:
@@ -7276,14 +7387,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765353470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.43, y: 0.2, z: 0.81}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -12.794999, y: 0.2, z: 5.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1778889581}
   m_Father: {fileID: 176882964}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &1765353472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7327,6 +7438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 1
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1001 &1773914593
 PrefabInstance:
@@ -7643,6 +7755,88 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
+--- !u!1 &1791377823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791377824}
+  - component: {fileID: 1791377826}
+  - component: {fileID: 1791377825}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791377824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791377823}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.056139845, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1542036448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1791377825
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791377823}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 767009cfe416d074d9ea39880e6f17aa, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1791377826
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791377823}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1797088626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8490,14 +8684,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880709197}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.39, y: 0.2, z: -0.4}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.822, y: 0.2, z: 7.7209997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492153595}
   m_Father: {fileID: 176882964}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!54 &1880709199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8528,6 +8722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!65 &1880709201
 BoxCollider:
@@ -9462,14 +9657,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035089856}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: 0.2, z: 0.34}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -13.242, y: 0.2, z: 8.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 375200130}
   m_Father: {fileID: 176882964}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &2035089858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9513,6 +9708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!1 &2043534181 stripped
 GameObject:
@@ -9566,14 +9762,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052667428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 0.2, z: 0.34}
+  m_LocalRotation: {x: -0, y: 0.67127556, z: -0, w: 0.74120796}
+  m_LocalPosition: {x: -14.332, y: 0.2, z: 8.461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1725412661}
   m_Father: {fileID: 176882964}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.331, z: 0}
 --- !u!65 &2052667430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9617,6 +9813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcetype: 0
   canCollect: 1
+  berries: {fileID: 0}
   ps: {fileID: 0}
 --- !u!4 &2056699751 stripped
 Transform:
@@ -10089,7 +10286,7 @@ GameObject:
   - component: {fileID: 2144960856}
   - component: {fileID: 2144960857}
   m_Layer: 0
-  m_Name: Bridge Temp
+  m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10128,6 +10325,7 @@ MonoBehaviour:
   data:
     TaskID: 0
     isTriggered: 0
+    triggerdistance: 2
     hasRequirement: 1
     NumOfRequirements: 1
     wantedWood: 4

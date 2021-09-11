@@ -28,7 +28,7 @@ public class Interactables : MonoBehaviour
     {
         if (isClick)
         {
-            if (Vector3.Distance(this.transform.position, player.transform.position) < 1.5f)
+            if (Vector3.Distance(this.transform.position, player.transform.position) < data.triggerdistance)
             {
                 TriggerInteraction();
 
@@ -119,6 +119,7 @@ public class Interactables : MonoBehaviour
                 //any effects of the task are set in motion
                 //im.ConcludeInteraction(data.TaskID);
                 im.ConcludingDialogue(data);
+                Destroy(this.GetComponent<Interactables>());
             }
             else if (completedRequirements < data.NumOfRequirements)
             {
