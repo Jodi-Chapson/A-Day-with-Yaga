@@ -260,7 +260,16 @@ public class Interactables : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (!isClick)
+            {
+                TriggerInteraction();
+            }
+        }
+    }
 
 
 }
