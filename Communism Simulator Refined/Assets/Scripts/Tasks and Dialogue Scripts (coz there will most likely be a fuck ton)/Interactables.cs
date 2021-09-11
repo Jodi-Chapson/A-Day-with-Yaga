@@ -31,15 +31,8 @@ public class Interactables : MonoBehaviour
             if (Vector3.Distance(this.transform.position, player.transform.position) < data.triggerdistance)
             {
                 TriggerInteraction();
-
-                
-
             }
-
-            
         }
-
-        
     }
 
 
@@ -58,8 +51,15 @@ public class Interactables : MonoBehaviour
 
                 if (!data.hasRequirement)
                 {
+                    
+                    im.ConcludeInteraction(data.TaskID);
+                    
                     Destroy(this.GetComponent<Interactables>());
                 }
+            }
+            else
+            {
+                Debug.Log("ding ding");
             }
         }
         else
@@ -67,9 +67,12 @@ public class Interactables : MonoBehaviour
             //player has interacted with this object before - hence check requirements and display appropriate dialogue
             //this object is for sure a task.
 
+            Debug.Log("nani" + data.TaskID);
+
             if (im.dialogueActive)
             {
                 return;
+
             }
 
 

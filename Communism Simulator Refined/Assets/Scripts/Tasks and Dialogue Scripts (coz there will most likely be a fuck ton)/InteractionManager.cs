@@ -16,6 +16,8 @@ public class InteractionManager : MonoBehaviour
 
     [Header("Interactables References")]
     public GameObject bridge;
+    public GameObject BettyTaskID2;
+    public GameObject BettyTaskID3;
 
     [Header("Other Variables")]
     public int concludingTask;
@@ -159,8 +161,28 @@ public class InteractionManager : MonoBehaviour
         //is called after concluding dialogue
         //may initiate opening dialogue of next quest
 
-
+        if (taskID == 2)
+        {
+            //Betty task 1
+            BettyTaskID2.SetActive(false);
+            BettyTaskID3.SetActive(true);
+            StartCoroutine(BettyPause());
+            
+        }
+        else if (taskID == 3)
+        {
+            //Betty task 2
+        }
         
+        
+    }
+
+    public IEnumerator BettyPause()
+    {
+        
+        yield return new WaitForSeconds(0.1f);
+
+        BettyTaskID3.GetComponent<Interactables>().TriggerInteraction();
     }
 
     public IEnumerator AnimateSentence(string dialogue, Text targettext)
