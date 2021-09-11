@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectibles : MonoBehaviour
 {
     [SerializeField]
-    int resourcetype; //0 is wood, 1 is stone
+    int resourcetype; //0 is wood, 1 is stone, 2 is berries, 3 is fish
     ResourceManager rm;
     Transform player;
     public bool canCollect;
@@ -25,7 +25,6 @@ public class Collectibles : MonoBehaviour
 
     private void Update()
     {
-        
 
         if (canCollect)
         {
@@ -52,17 +51,19 @@ public class Collectibles : MonoBehaviour
         {
             rm.stoneNum++;
         }
-
-
+        else if (resourcetype == 2)
+        {
+            rm.berriesNum++;
+        }
+        else if (resourcetype == 3)
+        {
+            rm.fishNum++;
+        }
 
         Destroy(gameObject);
     }
 
 
-    private void OnMouseOver()
-    {
-
-    }
     private void OnMouseDown()
     {
         if (canCollect)
@@ -72,9 +73,9 @@ public class Collectibles : MonoBehaviour
             if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance)
             {
 
-                //CollectResource();
-                //temporary fix
-                Destroy(gameObject);
+                CollectResource();
+                
+                
 
             }
         }

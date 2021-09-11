@@ -5,11 +5,16 @@ using UnityEngine;
 public class Interactables : MonoBehaviour
 {
     //script attached to all objects that can be interacted with for dialogue or tasks
-
+    [Header("References")]
     public Player player;
     public ResourceManager rm;
     public InteractionManager im;
     public InteractionData data;
+
+    [Header("Toggles")]
+    public bool isClick; //object is meant to be clicked on, as opposed to trigger via collider
+
+
 
     public void Start()
     {
@@ -18,6 +23,20 @@ public class Interactables : MonoBehaviour
         im = GameObject.Find("Game Manager").GetComponent<InteractionManager>();
     }
 
+
+    private void OnMouseDown()
+    {
+        if (isClick)
+        {
+            if (Vector3.Distance(this.transform.position, player.transform.position) < 1.5f)
+            {
+                TriggerInteraction();
+
+            }
+        }
+    }
+
+
     public void TriggerInteraction()
     {
         if (!data.isTriggered)
@@ -25,18 +44,25 @@ public class Interactables : MonoBehaviour
             //player is touching object for the first time. 
 
             //display opening dialogue 
-            im.OpeningDialogue(data);
-
-
-
-            data.isTriggered = true;
+            if (!im.dialogueActive)
+            {
+                im.OpeningDialogue(data);
+                data.isTriggered = true;
+                
+            }
         }
         else
         {
             //player has interacted with this object before - hence check requirements and display appropriate dialogue
             //this object is for sure a task.
 
-            int completedRequirements = 0;
+            if (im.dialogueActive)
+            {
+                return;
+            }
+
+
+                int completedRequirements = 0;
 
             //if a requirement is wood
             if (data.wantedWood != 0)
