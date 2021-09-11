@@ -63,13 +63,14 @@ public class Player : MonoBehaviour
         {
             //is sprinting
             sprintMod = sprintSpeed;
+            playerAnim.SetBool("isRunning", true);
             
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             //is not sprinting
             sprintMod = 1;
-
+            playerAnim.SetBool("isRunning", false);
         }
 
         Vector3 currentheading;
