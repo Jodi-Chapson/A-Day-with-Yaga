@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("References")]
+    public Animator playerAnim;
 
     [Header("Set Variables")] //variables that must be set before the game is played
     public float movespeed = 3f;
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
     
    
     
-    //public Animator playerAnim;
+    
     
     
     
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
-        //playerAnim = this.GetComponentInChildren<Animator>();
+        playerAnim = this.GetComponentInChildren<Animator>();
 
         forward = Camera.main.transform.forward;
         forward.y = 0;
@@ -50,12 +51,12 @@ public class Player : MonoBehaviour
             if (canMove)
             {
                 Move();
-                //playerAnim.SetBool("isMoving", true);
+                playerAnim.SetBool("isMoving", true);
             }
         }
         else
         {
-            //playerAnim.SetBool("isMoving", false);
+            playerAnim.SetBool("isMoving", false);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))

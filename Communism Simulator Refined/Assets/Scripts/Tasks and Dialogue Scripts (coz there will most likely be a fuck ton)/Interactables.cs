@@ -32,8 +32,14 @@ public class Interactables : MonoBehaviour
             {
                 TriggerInteraction();
 
+                
+
             }
+
+            
         }
+
+        
     }
 
 

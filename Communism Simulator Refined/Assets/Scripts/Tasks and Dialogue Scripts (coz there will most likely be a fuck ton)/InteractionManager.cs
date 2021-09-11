@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InteractionManager : MonoBehaviour
 {
     [Header("References")]
+    public Player player;
     public GameObject PlayerSpeechObject;
     public RectTransform PlayerSpeechBubble;
     public Text PlayerText;
@@ -20,6 +21,11 @@ public class InteractionManager : MonoBehaviour
     public int clicks;
     public GameObject activedialogue;
 
+
+    public void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
     public void Update()
     {
         if (dialogueActive)
@@ -32,7 +38,8 @@ public class InteractionManager : MonoBehaviour
                     dialogueActive = false;
                     activedialogue.SetActive(false);
                     clicks = 0;
-                    
+                    player.canMove = true;
+
                     if (isConclusion)
                     {
                         ConcludeInteraction(concludingTask);
@@ -60,6 +67,7 @@ public class InteractionManager : MonoBehaviour
         dialogueActive = true;
         activedialogue = PlayerSpeechObject;
         clicks = 0;
+        player.canMove = false;
 
     }
 
@@ -74,6 +82,7 @@ public class InteractionManager : MonoBehaviour
         dialogueActive = true;
         activedialogue = PlayerSpeechObject;
         clicks = 0;
+        player.canMove = false;
 
 
     }
@@ -93,6 +102,7 @@ public class InteractionManager : MonoBehaviour
 
         isConclusion = true;
         concludingTask = Data.TaskID;
+        player.canMove = false;
 
     }
     public void ConcludeInteraction(int taskID)
