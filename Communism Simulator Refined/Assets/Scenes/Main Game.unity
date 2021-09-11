@@ -835,6 +835,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1001 &200945818
 PrefabInstance:
@@ -1845,6 +1846,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1001 &453765175
 PrefabInstance:
@@ -2345,6 +2347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectionDistance: 1
   manager: {fileID: 0}
+  prefab: {fileID: 3766583603174688964, guid: 3e003190ecc2e7d47b7f1bd06de0a4a8, type: 3}
   woodNum: 0
   stoneNum: 0
   berriesNum: 0
@@ -4046,15 +4049,15 @@ RectTransform:
   m_GameObject: {fileID: 932927059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.06, z: 1}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 687732635}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 37.7}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 0, y: 36.6}
+  m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &932927061
 MonoBehaviour:
@@ -4666,6 +4669,7 @@ MonoBehaviour:
   resourcetype: 1
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!4 &1092125735
 Transform:
@@ -5941,6 +5945,7 @@ MonoBehaviour:
   resourcetype: 1
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1001 &1421154837
 PrefabInstance:
@@ -6089,6 +6094,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1001 &1457279308
 PrefabInstance:
@@ -6355,6 +6361,7 @@ MonoBehaviour:
   resourcetype: 2
   canCollect: 1
   berries: {fileID: 438318942}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!65 &1483534428
 BoxCollider:
@@ -6716,6 +6723,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!4 &1620340196 stripped
 Transform:
@@ -7059,6 +7067,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1 &1725412660
 GameObject:
@@ -7315,6 +7324,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1 &1761447600
 GameObject:
@@ -7439,6 +7449,7 @@ MonoBehaviour:
   resourcetype: 1
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1001 &1773914593
 PrefabInstance:
@@ -8723,6 +8734,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!65 &1880709201
 BoxCollider:
@@ -9709,6 +9721,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!1 &2043534181 stripped
 GameObject:
@@ -9814,6 +9827,7 @@ MonoBehaviour:
   resourcetype: 0
   canCollect: 1
   berries: {fileID: 0}
+  distancemod: 0
   ps: {fileID: 0}
 --- !u!4 &2056699751 stripped
 Transform:

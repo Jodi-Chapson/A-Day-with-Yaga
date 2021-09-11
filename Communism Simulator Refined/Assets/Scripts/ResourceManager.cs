@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
-    
-    
+
+    [Header("References")]
     public float collectionDistance;
     public GameManager manager;
+    public GameObject prefab;
 
     [Header("Resource Stats")]
-    
     public int woodNum = 0;
     public int stoneNum = 0;
     public int berriesNum = 0;

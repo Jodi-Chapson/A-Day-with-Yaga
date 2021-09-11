@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collectibles : MonoBehaviour
 {
@@ -51,24 +52,44 @@ public class Collectibles : MonoBehaviour
     }
     public void CollectResource()
     {
+        
+
         if (resourcetype == 0)
         {
             rm.woodNum++;
+            Vector3 alteredposition = new Vector3(this.transform.position.x, this.transform.position.y + 0.3f, this.transform.position.z);
+            GameObject notif = Instantiate(rm.prefab, alteredposition, Quaternion.identity);
+            notif.GetComponentInChildren<Text>().text = "+1 wood";
+
             Destroy(gameObject);
+            
+
+
         }
         else if (resourcetype == 1)
         {
             rm.stoneNum++;
+            Vector3 alteredposition = new Vector3(this.transform.position.x, this.transform.position.y + 0.3f, this.transform.position.z);
+            GameObject notif = Instantiate(rm.prefab, alteredposition, Quaternion.identity);
+
+            notif.GetComponentInChildren<Text>().text = "+1 stone";
             Destroy(gameObject);
         }
         else if (resourcetype == 2)
         {
             rm.berriesNum++;
+            Vector3 alteredposition = new Vector3(this.transform.position.x, this.transform.position.y + 0.75f, this.transform.position.z);
+            GameObject notif = Instantiate(rm.prefab, alteredposition, Quaternion.identity);
+
+            notif.GetComponentInChildren<Text>().text = "+1 berry";
             berries.SetActive(false);
         }
         else if (resourcetype == 3)
         {
             rm.fishNum++;
+            Vector3 alteredposition = new Vector3(this.transform.position.x, this.transform.position.y + 0.3f, this.transform.position.z);
+            GameObject notif = Instantiate(rm.prefab, alteredposition, Quaternion.identity);
+            notif.GetComponentInChildren<Text>().text = "+1 fish";
             Destroy(gameObject);
         }
 
