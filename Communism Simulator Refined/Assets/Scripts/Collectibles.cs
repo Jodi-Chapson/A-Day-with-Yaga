@@ -17,16 +17,6 @@ public class Collectibles : MonoBehaviour
     {
         rm = GameObject.Find("Game Manager").GetComponent<ResourceManager>();
 
-        if (resourcetype == 0)
-        {
-            rm.woodmax++;
-        
-        }
-        else if (resourcetype == 1)
-        {
-            rm.stonemax++;
-        }
-
 
         player = GameObject.Find("Player").transform;
         //ps = GetComponentInChildren<ParticleSystem>();
