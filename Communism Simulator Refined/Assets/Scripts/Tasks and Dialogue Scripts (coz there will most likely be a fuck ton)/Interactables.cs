@@ -45,7 +45,7 @@ public class Interactables : MonoBehaviour
             //display opening dialogue 
             if (!im.dialogueActive)
             {
-                im.OpeningDialogue(data);
+                im.StartDialogue(0, data);
                 data.isTriggered = true;
                 
 
@@ -122,7 +122,7 @@ public class Interactables : MonoBehaviour
 
                 //any effects of the task are set in motion
                 //im.ConcludeInteraction(data.TaskID);
-                im.ConcludingDialogue(data);
+                im.StartDialogue(1, data);
                 Destroy(this.GetComponent<Interactables>());
             }
             else if (completedRequirements < data.NumOfRequirements)
@@ -253,7 +253,16 @@ public class Interactables : MonoBehaviour
                 }
 
                 ponder += wood + stone + berries + fish + ".";
-                im.PonderDialogue(ponder);
+
+                im.dialogue.Clear();
+                im.speakerID.Clear();
+
+                im.dialogue.Enqueue(ponder);
+                im.speakerID.Enqueue(0);
+
+                im.NextDialogue();
+                im.dialogueActive = true;
+                
 
             }
         }
@@ -266,6 +275,7 @@ public class Interactables : MonoBehaviour
             if (!isClick)
             {
                 TriggerInteraction();
+                im.firsttext = false;
             }
         }
     }

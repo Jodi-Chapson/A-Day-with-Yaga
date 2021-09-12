@@ -1385,7 +1385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332768716}
   m_LocalRotation: {x: -0, y: -0.9280286, z: -0, w: 0.37250894}
-  m_LocalPosition: {x: -6.57, y: 0, z: 2.29}
+  m_LocalPosition: {x: -15.49, y: 0, z: -7.03}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 1806438859}
@@ -1712,10 +1712,15 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 4
     wantedFish: 0
-    OpeningCharacterID: 1
-    OpeningDialogue: oh 4 berries please :D
-    ClosingCharacterID: 1
-    ClosingDialogue: thank you, love!
+    OpeningCharacterID: 000000000100000001000000
+    OpeningDialogue:
+    - "How\u2019s about some yummy berries for breakfast?"
+    - You know, those things always stain my wings.
+    - ...Fine, if you insist.
+    ClosingCharacterID: 0100000001000000
+    ClosingDialogue:
+    - "Oi, these aren\u2019 half bad."
+    - 'Thanks, I suppose. '
   isClick: 1
 --- !u!65 &389705774
 BoxCollider:
@@ -2680,10 +2685,10 @@ MonoBehaviour:
   collectionDistance: 1
   manager: {fileID: 0}
   prefab: {fileID: 3766583603174688964, guid: 3e003190ecc2e7d47b7f1bd06de0a4a8, type: 3}
-  woodNum: 0
-  stoneNum: 0
-  berriesNum: 0
-  fishNum: 0
+  woodNum: 30
+  stoneNum: 30
+  berriesNum: 30
+  fishNum: 30
 --- !u!114 &551603564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,8 +2715,8 @@ MonoBehaviour:
   concludingTask: 0
   dialogueActive: 0
   isConclusion: 0
-  clicks: 0
   activedialogue: {fileID: 0}
+  firsttext: 0
 --- !u!1 &558875423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,7 +3558,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1537909634}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7144,10 +7149,15 @@ MonoBehaviour:
     wantedStone: 5
     wantedBerries: 0
     wantedFish: 0
-    OpeningCharacterID: 1
-    OpeningDialogue: 3 wood and 5 stones please!
-    ClosingCharacterID: 1
-    ClosingDialogue: Thank you, Yaga <3
+    OpeningCharacterID: 00000000010000000000000001000000
+    OpeningDialogue:
+    - Aunt Betty? Good mornin-
+    - Bahumbug! This house is falling apart!
+    - Did the blizzard do a number on it?
+    - Yes...do bring me some wood and stone for repairs.
+    ClosingCharacterID: 01000000
+    ClosingDialogue:
+    - Thank you, child. My aching bones feel a little less cold now
   isClick: 1
 --- !u!65 &1318348775
 BoxCollider:
@@ -7876,10 +7886,14 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 2
     wantedFish: 2
-    OpeningCharacterID: 1
-    OpeningDialogue: 2 fish and 2 berries for dinner please!
-    ClosingCharacterID: 1
-    ClosingDialogue: thank you, love!
+    OpeningCharacterID: 000000000100000001000000
+    OpeningDialogue:
+    - "Hey Aunt Betty, it\u2019s getting late. You peckish?"
+    - 'A little. '
+    - Could you grab us some fish and berries for dinner?
+    ClosingCharacterID: 01000000
+    ClosingDialogue:
+    - "Thank you, Yaga. \n"
   isClick: 1
 --- !u!65 &1471771627
 BoxCollider:
@@ -7966,10 +7980,13 @@ MonoBehaviour:
     wantedStone: 3
     wantedBerries: 0
     wantedFish: 0
-    OpeningCharacterID: 0
-    OpeningDialogue: my fireplace :( need 2 wood, 3 stone
-    ClosingCharacterID: 0
-    ClosingDialogue: yay, fire >:D
+    OpeningCharacterID: 0000000000000000
+    OpeningDialogue:
+    - Aw, my little campfire went out!
+    - I could probably repair it with a few sticks and stones.
+    ClosingCharacterID: 00000000
+    ClosingDialogue:
+    - ' Look at the sweet little flames!'
   isClick: 1
 --- !u!1 &1483534426 stripped
 GameObject:
@@ -8508,10 +8525,13 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 1
     wantedFish: 0
-    OpeningCharacterID: 0
-    OpeningDialogue: my fishing rod got destroyed :( i need 2 wood 1 berry
-    ClosingCharacterID: 0
-    ClosingDialogue: COME TO PAPPY, FISHES-
+    OpeningCharacterID: 0000000000000000
+    OpeningDialogue:
+    - "The blizzard seems swept away my fishing rod too! \n"
+    - "Gotta build a new one real quick. \r"
+    ClosingCharacterID: 00000000
+    ClosingDialogue:
+    - And, done!
   isClick: 1
 --- !u!136 &1542036447
 CapsuleCollider:
@@ -8568,6 +8588,103 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1154373992}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1612708261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612708262}
+  - component: {fileID: 1612708265}
+  - component: {fileID: 1612708264}
+  - component: {fileID: 1612708263}
+  m_Layer: 0
+  m_Name: '"Door" ;)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612708262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612708261}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.1, z: 1.83}
+  m_LocalScale: {x: 1.4770696, y: 0.10117, z: 1.7380272}
+  m_Children: []
+  m_Father: {fileID: 744709854}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!136 &1612708263
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612708261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1612708264
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612708261}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 70e97e36b98c5d848accea7724cd6733, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1612708265
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612708261}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1616898062
 GameObject:
   m_ObjectHideFlags: 0
@@ -9293,7 +9410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761447600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 687732635}
@@ -10504,10 +10621,11 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 0
     wantedFish: 0
-    OpeningCharacterID: 0
-    OpeningDialogue: Cant go home yet, the day is still young!
-    ClosingCharacterID: 0
-    ClosingDialogue: 
+    OpeningCharacterID: 00000000
+    OpeningDialogue:
+    - Can't go home yet, the day is still young!
+    ClosingCharacterID: 
+    ClosingDialogue: []
   isClick: 0
 --- !u!65 &1873719364
 BoxCollider:
@@ -10520,8 +10638,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5486385, y: 2.033874, z: 1.3188576}
-  m_Center: {x: 0.00030485375, y: -0.18328802, z: 1.96638}
+  m_Size: {x: 2.5930579, y: 2.033874, z: 1.9211905}
+  m_Center: {x: -0.22911423, y: -0.18328802, z: 2.2675707}
 --- !u!1001 &1876536099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12554,10 +12672,13 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 0
     wantedFish: 0
-    OpeningCharacterID: 0
-    OpeningDialogue: need 4 wood for bridge
-    ClosingCharacterID: 0
-    ClosingDialogue: bridge is fixed!
+    OpeningCharacterID: 0000000000000000
+    OpeningDialogue:
+    - Looks like the blizzard last night broke my bridge!
+    - I will need 4 pieces of wood to rebuild it.
+    ClosingCharacterID: 00000000
+    ClosingDialogue:
+    - All fixed! Now I can go see Aunt Betty!
   isClick: 1
 --- !u!65 &2144960857
 BoxCollider:

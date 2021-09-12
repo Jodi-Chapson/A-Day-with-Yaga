@@ -24,136 +24,181 @@ public class InteractionManager : MonoBehaviour
     public int concludingTask;
     public bool dialogueActive;
     public bool isConclusion;
-    public int clicks;
     public GameObject activedialogue;
+    public Queue<int> speakerID;
+    public Queue<string> dialogue;
+    public bool firsttext;
 
 
     public void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        speakerID = new Queue<int>();
+        dialogue = new Queue<string>();
     }
     public void Update()
     {
         if (dialogueActive)
         {
+            player.canMove = false;
+        }
+        else
+        {
+            player.canMove = true;
+        }
+        
+        
+        
+    }
+
+    
+
+    public void LateUpdate()
+    {
+        if (dialogueActive)
+        {
             if (Input.GetMouseButtonDown(0))
             {
+                if (firsttext)
+                {
+                    firsttext = false;
+                    Debug.Log("bingo");
+                    return;
+
+                    
+                    
+                }
+
+                NextDialogue();
+
                 
-                if (clicks == 1)
-                {
-                    dialogueActive = false;
-                    activedialogue.SetActive(false);
-                    clicks = 0;
-                    player.canMove = true;
-
-                    if (isConclusion)
-                    {
-                        ConcludeInteraction(concludingTask);
-                        isConclusion = false;
-                    }
-
-                }
-                else
-                {
-                    clicks++;
-                }
+                
                 
             }
         }
     }
 
-    public void OpeningDialogue (InteractionData Data)
+    public void StartDialogue (int type, InteractionData Data)
     {
-        //initiates opening dialogue
+        //initiates dialogue
 
-        if (Data.OpeningCharacterID == 0)
+        speakerID.Clear();
+        dialogue.Clear();
+        firsttext = true;
+
+        if (type == 0)
         {
-            //player speaking
-            PlayerSpeechObject.SetActive(true);
-            StopAllCoroutines();
-            StartCoroutine(AnimateSentence(Data.OpeningDialogue, PlayerText));
+            //opening dialogue
+            //loads the appropriate dialogue
 
-            dialogueActive = true;
-            activedialogue = PlayerSpeechObject;
-            clicks = 0;
-            player.canMove = false;
-
-
-
-
-        }
-        else if (Data.OpeningCharacterID == 1)
-        {
-            //betty speaking
-
-            BettySpeechObject.SetActive(true);
-            StopAllCoroutines();
-            StartCoroutine(AnimateSentence(Data.OpeningDialogue, BettyText));
-
-            dialogueActive = true;
-            activedialogue = BettySpeechObject;
-            clicks = 0;
-            player.canMove = false;
-        }
-        
-
-    }
-
-    public void PonderDialogue (string sentence)
-    {
-        //initiate Yaga thinking about whats missing
-
-        PlayerSpeechObject.SetActive(true);
-        StopAllCoroutines();
-        StartCoroutine(AnimateSentence(sentence, PlayerText));
-
-        dialogueActive = true;
-        activedialogue = PlayerSpeechObject;
-        clicks = 0;
-        player.canMove = false;
-
-
-    }
-
-
-    public void ConcludingDialogue(InteractionData Data)
-    {
-        // initiates end dialogue
-
-        if (Data.OpeningCharacterID == 0)
-        {
-            PlayerSpeechObject.SetActive(true);
-
-            StopAllCoroutines();
-            StartCoroutine(AnimateSentence(Data.ClosingDialogue, PlayerText));
-
-            dialogueActive = true;
-            activedialogue = PlayerSpeechObject;
-            clicks = 0;
-
-            isConclusion = true;
-            concludingTask = Data.TaskID;
-            player.canMove = false;
-        }
-        else if (Data.OpeningCharacterID == 1)
-        {
-            BettySpeechObject.SetActive(true);
-
-            StopAllCoroutines();
-            StartCoroutine(AnimateSentence(Data.ClosingDialogue, BettyText));
-
-            dialogueActive = true;
-            activedialogue = BettySpeechObject;
-            clicks = 0;
-
-            isConclusion = true;
-            concludingTask = Data.TaskID;
-            player.canMove = false;
-        }
+            foreach (int id in Data.OpeningCharacterID)
+            {
+                speakerID.Enqueue(id);
+            }
             
+            foreach (string sentence in Data.OpeningDialogue)
+            {
+                dialogue.Enqueue(sentence);
+                
+            }
+
+
+            NextDialogue();
+            dialogueActive = true;
+            
+
+
+        }
+        else if (type == 1)
+        {
+            //closing dialogue
+
+            foreach (int id in Data.ClosingCharacterID)
+            {
+                speakerID.Enqueue(id);
+            }
+
+            foreach (string sentence in Data.ClosingDialogue)
+            {
+                dialogue.Enqueue(sentence);
+            }
+
+            isConclusion = true;
+            concludingTask = Data.TaskID;
+
+
+            NextDialogue();
+            dialogueActive = true;
+            
+            
+        }
         
 
     }
+
+    public void NextDialogue()
+    {
+        
+
+        if (dialogue.Count == 0)
+        {
+            //end the dialogue
+            EndDialogue();
+            return;
+        }
+
+        string sentence = dialogue.Dequeue();
+        int id = speakerID.Dequeue();
+
+        if (id == 0)
+        {
+            //yaga is speaking
+
+            PlayerSpeechObject.SetActive(true);
+            activedialogue = PlayerSpeechObject;
+            if (BettySpeechObject.activeSelf == true)
+            {
+                BettySpeechObject.SetActive(false);
+            }
+
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(sentence, PlayerText));
+
+        }
+        else if (id == 1)
+        {
+            //betty is speaking
+
+            BettySpeechObject.SetActive(true);
+            activedialogue = BettySpeechObject;
+            if (PlayerSpeechObject.activeSelf == true)
+            {
+                 PlayerSpeechObject.SetActive(false);
+            }
+
+            StopAllCoroutines();
+            StartCoroutine(AnimateSentence(sentence, BettyText));
+
+        }
+
+    }
+
+    public void EndDialogue()
+    {
+        activedialogue.SetActive(false);
+        dialogueActive = false;
+        
+
+
+        if (isConclusion)
+        {
+            ConcludeInteraction(concludingTask);
+            isConclusion = false;
+        }
+    }
+
+
+
     public void ConcludeInteraction(int taskID)
     {
         Debug.Log("task " + taskID + " complete!");
@@ -190,10 +235,12 @@ public class InteractionManager : MonoBehaviour
         if (task == 1)
         {
             BettyTaskID3.GetComponent<Interactables>().TriggerInteraction();
+            firsttext = false;
         }
         else if (task == 2)
         {
             BettyTaskID6.GetComponent<Interactables>().TriggerInteraction();
+            firsttext = false;
         }
     }
 

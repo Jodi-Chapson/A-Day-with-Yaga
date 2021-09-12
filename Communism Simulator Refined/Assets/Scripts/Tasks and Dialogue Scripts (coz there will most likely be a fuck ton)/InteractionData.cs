@@ -19,10 +19,16 @@ public class InteractionData
     public int wantedBerries;
     public int wantedFish;
 
-    public int OpeningCharacterID; // to check which character is speaking, and works with the string of dialoge. 0 is Yaga, and 1 is Betty
-    public string OpeningDialogue;
-    public int ClosingCharacterID;
-    public string ClosingDialogue;
+    public int[] OpeningCharacterID; // to check which character is speaking, and works with the string of dialoge. 0 is Yaga, and 1 is Betty
+    
+    [TextArea(3,10)]
+    public string[] OpeningDialogue;
+
+
+
+    public int[] ClosingCharacterID;
+    [TextArea(3, 10)]
+    public string[] ClosingDialogue;
     //normal dialogues and commentary from Yaga only use OpeningDialogue
     //mostly applies to tasks - Closing Dialogue is presented when a task is completed :D haha fuk me
 
