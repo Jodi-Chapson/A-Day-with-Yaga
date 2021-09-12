@@ -262,6 +262,10 @@ public class Interactables : MonoBehaviour
 
                 im.NextDialogue();
                 im.dialogueActive = true;
+                im.firsttext = true;
+
+                Debug.Log(ponder);
+                Debug.Log("ponder");
                 
 
             }

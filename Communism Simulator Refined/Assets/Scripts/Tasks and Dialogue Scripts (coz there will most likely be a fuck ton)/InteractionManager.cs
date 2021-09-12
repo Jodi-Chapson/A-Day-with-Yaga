@@ -62,7 +62,7 @@ public class InteractionManager : MonoBehaviour
                 if (firsttext)
                 {
                     firsttext = false;
-                    Debug.Log("bingo");
+
                     return;
 
                     
@@ -252,7 +252,7 @@ public class InteractionManager : MonoBehaviour
         foreach (char letter in dialogue.ToCharArray())
         {
             targettext.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
         }
 
     }

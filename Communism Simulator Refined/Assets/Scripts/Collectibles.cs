@@ -96,6 +96,8 @@ public class Collectibles : MonoBehaviour
 
             notif.GetComponentInChildren<Text>().text = "+1 berry";
             berries.SetActive(false);
+            this.GetComponent<Collectibles>().enabled = false;
+            canCollect = false;
         }
         else if (resourcetype == 3)
         {
