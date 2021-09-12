@@ -18,6 +18,26 @@ public class Collectibles : MonoBehaviour
 
     private void Start()
     {
+        
+        if (resourcetype == 2)
+        {
+            Transform berryTrans = transform.Find("Berry");
+            if (berryTrans != null)
+            {
+                berries = berryTrans.gameObject;
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
+
+
+        ps = GetComponentInChildren<ParticleSystem>();
         rm = GameObject.Find("Game Manager").GetComponent<ResourceManager>();
 
 
@@ -36,17 +56,16 @@ public class Collectibles : MonoBehaviour
     {
 
         if (canCollect)
-        {
-            
+        {            
 
-            if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance + 0.5)
+            if (Vector3.Distance(transform.position, player.position) < rm.collectionDistance + 0.5)
             {
 
-                //ps.enableEmission = true;
+                ps.enableEmission = true;
             }
             else
             {
-                //ps.enableEmission = false;
+                ps.enableEmission = false;
             }
         }
     }
