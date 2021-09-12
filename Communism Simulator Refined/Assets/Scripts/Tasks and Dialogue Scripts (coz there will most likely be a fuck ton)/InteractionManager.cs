@@ -15,10 +15,12 @@ public class InteractionManager : MonoBehaviour
     public Text BettyText;
 
     [Header("Interactables References")]
-    public GameObject bridge;
+    public GameObject bridgefix;
+    public GameObject bridgebroke;
     public GameObject BettyTaskID2;
     public GameObject BettyTaskID3;
     public GameObject BettyTaskID6;
+    
 
     [Header("Other Variables")]
     public int concludingTask;
@@ -28,6 +30,7 @@ public class InteractionManager : MonoBehaviour
     public Queue<int> speakerID;
     public Queue<string> dialogue;
     public bool firsttext;
+    public bool immediateeffect;
 
 
     public void Start()
@@ -81,7 +84,7 @@ public class InteractionManager : MonoBehaviour
     public void StartDialogue (int type, InteractionData Data)
     {
         //initiates dialogue
-
+        immediateeffect = Data.immediateeffect;
         speakerID.Clear();
         dialogue.Clear();
         firsttext = true;
@@ -138,7 +141,15 @@ public class InteractionManager : MonoBehaviour
 
     public void NextDialogue()
     {
-        
+        if (dialogue.Count == 1)
+        {
+            //on the last speech bubble
+            if (immediateeffect && isConclusion)
+            {
+                ConcludeInteraction(concludingTask);
+                isConclusion = false;
+            }
+        }
 
         if (dialogue.Count == 0)
         {
@@ -206,8 +217,12 @@ public class InteractionManager : MonoBehaviour
         //for handling the effects of completed tasks - if any
         //is called after concluding dialogue
         //may initiate opening dialogue of next quest
-
-        if (taskID == 2)
+        if (taskID == 0)
+        {
+            bridgebroke.SetActive(false);
+            bridgefix.SetActive(true);
+        }
+        else if (taskID == 2)
         {
             //Betty task 1
             BettyTaskID2.SetActive(false);

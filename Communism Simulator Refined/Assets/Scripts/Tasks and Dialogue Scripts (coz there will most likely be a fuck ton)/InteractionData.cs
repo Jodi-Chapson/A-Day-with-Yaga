@@ -10,6 +10,7 @@ public class InteractionData
     
     public bool isTriggered; //means the player has interacted with this object
     public float triggerdistance;
+    public bool immediateeffect;
 
     public bool hasRequirement;
     public int NumOfRequirements; //so if a task wants only wood, this will be 1. if it wants say, wood, stone and fish, this will be 3. based on number of required unique resources
