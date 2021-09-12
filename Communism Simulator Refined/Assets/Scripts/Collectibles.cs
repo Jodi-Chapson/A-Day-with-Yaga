@@ -26,15 +26,9 @@ public class Collectibles : MonoBehaviour
             {
                 berries = berryTrans.gameObject;
             }
-            else
-            {
-                return;
-            }
+            
         }
-        else
-        {
-            return;
-        }
+        
 
 
         ps = GetComponentInChildren<ParticleSystem>();
