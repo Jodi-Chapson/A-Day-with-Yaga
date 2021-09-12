@@ -17,6 +17,13 @@ public class InteractionManager : MonoBehaviour
     [Header("Interactables References")]
     public GameObject bridgefix;
     public GameObject bridgebroke;
+
+    public GameObject fireplacefix;
+
+    public Vector3 chairpos;
+    public GameObject chair;
+    public GameObject rod;
+
     public GameObject BettyTaskID2;
     public GameObject BettyTaskID3;
     public GameObject BettyTaskID6;
@@ -222,6 +229,10 @@ public class InteractionManager : MonoBehaviour
             bridgebroke.SetActive(false);
             bridgefix.SetActive(true);
         }
+        else if (taskID == 1)
+        {
+            fireplacefix.SetActive(true);
+        }
         else if (taskID == 2)
         {
             //Betty task 1
@@ -238,6 +249,12 @@ public class InteractionManager : MonoBehaviour
             StartCoroutine(BettyPause(2));
             
 
+        }
+        else if (taskID == 7)
+        {
+            chair.gameObject.transform.localPosition = chairpos;
+            chair.gameObject.transform.localEulerAngles = Vector3.zero;
+            rod.gameObject.SetActive(true);
         }
         
         
