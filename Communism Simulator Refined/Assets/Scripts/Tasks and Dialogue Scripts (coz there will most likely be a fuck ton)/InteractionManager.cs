@@ -15,6 +15,8 @@ public class InteractionManager : MonoBehaviour
     public Text BettyText;
 
     [Header("Interactables References")]
+    public GameObject particles;
+
     public GameObject bridgefix;
     public GameObject bridgebroke;
 
@@ -228,10 +230,14 @@ public class InteractionManager : MonoBehaviour
         {
             bridgebroke.SetActive(false);
             bridgefix.SetActive(true);
+            GameObject particle = Instantiate(particles, bridgefix.GetComponentInParent<Transform>().transform.position + new Vector3 (-3 ,3, -4), Quaternion.identity);
+            Destroy(particle, 1);
         }
         else if (taskID == 1)
         {
             fireplacefix.SetActive(true);
+            GameObject particle = Instantiate(particles, new Vector3(fireplacefix.transform.position.x - 1, fireplacefix.transform.position.y + 1, fireplacefix.transform.position.z - 1), Quaternion.identity);
+            Destroy(particle, 1);
         }
         else if (taskID == 2)
         {
@@ -255,6 +261,8 @@ public class InteractionManager : MonoBehaviour
             chair.gameObject.transform.localPosition = chairpos;
             chair.gameObject.transform.localEulerAngles = Vector3.zero;
             rod.gameObject.SetActive(true);
+            GameObject particle = Instantiate(particles, new Vector3(rod.transform.position.x - 3, rod.transform.position.y + 4, rod.transform.position.z - 3), Quaternion.identity);
+            Destroy(particle, 1);
         }
         
         
