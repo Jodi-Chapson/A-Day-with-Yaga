@@ -23,6 +23,23 @@ public class Interactables : MonoBehaviour
         im = GameObject.Find("Game Manager").GetComponent<InteractionManager>();
     }
 
+    private void OnMouseEnter()
+    {
+        if (isClick)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 2;
+        }
+        
+    }
+
+    public void OnMouseExit()
+    {
+        if(isClick && rm.gameObject.GetComponent<GameManager>().cursorstate == 2)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+        }
+    }
+
 
     private void OnMouseDown()
     {

@@ -65,7 +65,10 @@ public class Collectibles : MonoBehaviour
     }
     public void CollectResource()
     {
-        
+        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+        }
 
         if (resourcetype == 0)
         {
@@ -111,7 +114,18 @@ public class Collectibles : MonoBehaviour
         
     }
 
+    public void OnMouseEnter()
+    {
+        rm.gameObject.GetComponent<GameManager>().cursorstate = 1;
+    }
 
+    public void OnMouseExit()
+    {
+        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+        }
+    }
     private void OnMouseDown()
     {
         if (canCollect)

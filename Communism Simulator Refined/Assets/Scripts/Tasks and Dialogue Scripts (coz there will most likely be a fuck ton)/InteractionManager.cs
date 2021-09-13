@@ -228,7 +228,12 @@ public class InteractionManager : MonoBehaviour
     public void ConcludeInteraction(int taskID)
     {
         Debug.Log("task " + taskID + " complete!");
-        
+
+        if (this.gameObject.GetComponent<GameManager>().cursorstate == 2)
+        {
+            this.gameObject.GetComponent<GameManager>().cursorstate = 0;
+        }
+
 
         //for handling the effects of completed tasks - if any
         //is called after concluding dialogue

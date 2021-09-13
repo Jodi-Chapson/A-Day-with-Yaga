@@ -10,6 +10,13 @@ public class GameManager : MonoBehaviour
     public InteractionManager im;
     public GameObject packUI, packButton;
     public Texture packOpen, packClosed;
+    
+
+    public Texture2D cursordefault;
+    public Texture2D cursorpickup;
+    public Texture2D cursorinteract;
+    public int cursorstate; // 0 = default, 1 = pickup, 2 = interactable
+    public CursorMode mode = CursorMode.Auto;
 
 
 
@@ -35,6 +42,20 @@ public class GameManager : MonoBehaviour
         {
             BackpackState();
         }
+
+        if (cursorstate == 0)
+        {
+            Cursor.SetCursor(cursordefault, Vector2.zero, mode);
+        }
+        else if (cursorstate == 1)
+        {
+            Cursor.SetCursor(cursorpickup, Vector2.zero, mode);
+        }
+        else if (cursorstate == 2)
+        {
+            Cursor.SetCursor(cursorinteract, Vector2.zero, mode);
+        }
+
 
 
 

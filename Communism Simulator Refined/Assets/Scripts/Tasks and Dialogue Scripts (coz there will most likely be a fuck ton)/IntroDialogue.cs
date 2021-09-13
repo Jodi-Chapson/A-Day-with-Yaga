@@ -43,6 +43,9 @@ public class IntroDialogue : MonoBehaviour
         im.NextDialogue();
         im.dialogueActive = true;
         //im.firsttext = true;
+
+
+        Destroy(this.gameObject, 2);
     }
 
     // Update is called once per frame
