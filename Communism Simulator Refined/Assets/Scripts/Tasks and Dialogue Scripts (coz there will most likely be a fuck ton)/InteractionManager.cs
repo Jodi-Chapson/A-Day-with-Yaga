@@ -40,6 +40,7 @@ public class InteractionManager : MonoBehaviour
     public Queue<string> dialogue;
     public bool firsttext;
     public bool immediateeffect;
+    public int taskcounter;
 
 
     public void Start()
@@ -47,17 +48,18 @@ public class InteractionManager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         speakerID = new Queue<int>();
         dialogue = new Queue<string>();
+        taskcounter = 0;
     }
     public void Update()
     {
-        if (dialogueActive)
-        {
-            player.canMove = false;
-        }
-        else
-        {
-            player.canMove = true;
-        }
+        //if (dialogueActive)
+        //{
+        //    player.canMove = false;
+        //}
+        //else
+        //{
+        //    player.canMove = true;
+        //}
         
         
         
@@ -150,6 +152,9 @@ public class InteractionManager : MonoBehaviour
 
     public void NextDialogue()
     {
+
+        player.canMove = false;
+        
         if (dialogue.Count == 1)
         {
             //on the last speech bubble
@@ -207,6 +212,7 @@ public class InteractionManager : MonoBehaviour
     {
         activedialogue.SetActive(false);
         dialogueActive = false;
+        player.canMove = true;
         
 
 
@@ -222,12 +228,14 @@ public class InteractionManager : MonoBehaviour
     public void ConcludeInteraction(int taskID)
     {
         Debug.Log("task " + taskID + " complete!");
+        
 
         //for handling the effects of completed tasks - if any
         //is called after concluding dialogue
         //may initiate opening dialogue of next quest
         if (taskID == 0)
         {
+            taskcounter++;
             bridgebroke.SetActive(false);
             bridgefix.SetActive(true);
             GameObject particle = Instantiate(particles, bridgefix.GetComponentInParent<Transform>().transform.position + new Vector3 (-3 ,3, -4), Quaternion.identity);
@@ -235,12 +243,14 @@ public class InteractionManager : MonoBehaviour
         }
         else if (taskID == 1)
         {
+            taskcounter++;
             fireplacefix.SetActive(true);
             GameObject particle = Instantiate(particles, new Vector3(fireplacefix.transform.position.x - 1, fireplacefix.transform.position.y + 1, fireplacefix.transform.position.z - 1), Quaternion.identity);
             Destroy(particle, 1);
         }
         else if (taskID == 2)
         {
+            taskcounter++;
             //Betty task 1
             BettyTaskID2.SetActive(false);
             BettyTaskID3.SetActive(true);
@@ -249,6 +259,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (taskID == 3)
         {
+            taskcounter++;
             //Betty task 2
             BettyTaskID3.SetActive(false);
             BettyTaskID6.SetActive(true);
@@ -258,6 +269,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (taskID == 7)
         {
+            taskcounter++;
             chair.gameObject.transform.localPosition = chairpos;
             chair.gameObject.transform.localEulerAngles = Vector3.zero;
             rod.gameObject.SetActive(true);

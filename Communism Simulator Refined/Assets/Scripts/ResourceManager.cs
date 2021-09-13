@@ -10,6 +10,7 @@ public class ResourceManager : MonoBehaviour
     public float collectionDistance;
     public GameManager manager;
     public GameObject prefab;
+    public Text wood, stone, berries, fish;
 
     [Header("Resource Stats")]
     public int woodNum = 0;
@@ -28,6 +29,14 @@ public class ResourceManager : MonoBehaviour
     
     void Update()
     {
+        wood.text = "X " + woodNum.ToString();
+        stone.text = "X " + stoneNum.ToString();
+        berries.text = "X " + berriesNum.ToString();
+        fish.text = "X " + fishNum.ToString();
+
+
+
+
         //wood.text = woodNum + "/" + woodmax;
         //stone.text = stoneNum + "/" + stonemax;
 
