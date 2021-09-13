@@ -131,17 +131,17 @@ PrefabInstance:
     - target: {fileID: 157150835953733234, guid: c97f43bd9fab36e449621fbf2340e926,
         type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 0.25
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 157150835953733234, guid: c97f43bd9fab36e449621fbf2340e926,
         type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 1.74
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 157150835953733234, guid: c97f43bd9fab36e449621fbf2340e926,
         type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 0.35
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 157150835953733234, guid: c97f43bd9fab36e449621fbf2340e926,
         type: 3}
