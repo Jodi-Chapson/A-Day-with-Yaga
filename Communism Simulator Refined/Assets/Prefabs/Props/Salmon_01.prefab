@@ -4818,8 +4818,8 @@ GameObject:
   - component: {fileID: 1877152078023163578}
   - component: {fileID: 4460829275299514992}
   - component: {fileID: 7295769247500498565}
-  - component: {fileID: 8307751277020986008}
   - component: {fileID: 8887085510819008551}
+  - component: {fileID: 2233362880694087693}
   m_Layer: 0
   m_Name: Salmon_01
   m_TagString: Untagged
@@ -4908,20 +4908,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &8307751277020986008
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2803755644363713445}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2
-  m_Height: 9.14
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.12686908, z: -3.874711}
 --- !u!114 &8887085510819008551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4939,3 +4925,16 @@ MonoBehaviour:
   berries: {fileID: 0}
   distancemod: 2
   ps: {fileID: 6678949076686491863}
+--- !u!65 &2233362880694087693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803755644363713445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.087747, y: 2.9328072, z: 9.692792}
+  m_Center: {x: -2.3631208e-10, y: 0.12686908, z: -3.8747108}

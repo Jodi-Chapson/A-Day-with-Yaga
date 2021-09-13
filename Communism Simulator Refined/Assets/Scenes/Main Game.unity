@@ -2011,7 +2011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &156973403 stripped
 Transform:
@@ -2453,7 +2453,7 @@ Transform:
   - {fileID: 837867117}
   - {fileID: 1143409436}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &178097597
 PrefabInstance:
@@ -4269,12 +4269,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332768716}
   m_LocalRotation: {x: -0, y: -0.9280286, z: -0, w: 0.37250894}
-  m_LocalPosition: {x: -6.36, y: 0, z: 2.64}
+  m_LocalPosition: {x: -6.91, y: 0, z: 1.85}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 1806438859}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -136.259, z: 0}
 --- !u!54 &332768720
 Rigidbody:
@@ -4740,7 +4740,7 @@ Transform:
   - {fileID: 744709854}
   - {fileID: 1457279309}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364051146
 GameObject:
@@ -4806,7 +4806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &366961465
 GameObject:
@@ -5162,13 +5162,13 @@ MonoBehaviour:
     wantedFish: 0
     OpeningCharacterID: 000000000100000001000000
     OpeningDialogue:
-    - "How\u2019s about some yummy berries for breakfast?"
-    - You know, those things always stain my wings.
-    - ...Fine, if you insist.
-    ClosingCharacterID: 0100000001000000
+    - "How\u2019s about some scrumptious berries for breakfast?"
+    - You know those things always stain my wings.
+    - ...But okay, if you insist. Just be sure they're ripe.
+    ClosingCharacterID: 0100000000000000
     ClosingDialogue:
-    - "Oi, these aren\u2019 half bad."
-    - 'Thanks, I suppose. '
+    - "Thanks, little one. These aren\u2019t half bad."
+    - Anytime.
   isClick: 1
 --- !u!65 &389705774
 BoxCollider:
@@ -6656,7 +6656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &481607298
 PrefabInstance:
@@ -6981,7 +6981,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &491651299 stripped
 Transform:
@@ -7195,7 +7195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512893303}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -7203,7 +7203,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0.85
   sharedProfile: {fileID: 11400000, guid: dc02bc3dba3734e44803851dc87c9adc, type: 2}
 --- !u!4 &512893305
 Transform:
@@ -7217,7 +7217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &515597409 stripped
 GameObject:
@@ -9169,7 +9169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676853325
 GameObject:
@@ -9403,7 +9403,7 @@ Transform:
   m_Children:
   - {fileID: 1537909631}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 35, y: 45, z: 0}
 --- !u!1 &687732634
 GameObject:
@@ -17277,7 +17277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &895513012
 GameObject:
@@ -25541,7 +25541,7 @@ Transform:
   - {fileID: 366961466}
   - {fileID: 1582089843}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197847724
 PrefabInstance:
@@ -26967,15 +26967,19 @@ MonoBehaviour:
     wantedStone: 5
     wantedBerries: 0
     wantedFish: 0
-    OpeningCharacterID: 00000000010000000000000001000000
+    OpeningCharacterID: 00000000010000000100000000000000010000000100000000000000
     OpeningDialogue:
-    - Aunt Betty? Good mornin-
-    - Bahumbug! This house is falling apart!
-    - Did the blizzard do a number on it?
-    - Uhm... do bring me some wood and stone for repairs.
-    ClosingCharacterID: 01000000
+    - Hey Betty, what a lovely day it is to-
+    - 'Bahumbug! '
+    - This storm nearly blew my house away.
+    - Oh dear, I have a spare nest back at home?
+    - '*grumbles* ...ugh, it''s okay. I can fix it.'
+    - Just need some wood and stone for repairs.
+    - I am more than happy to help.
+    ClosingCharacterID: 0100000001000000
     ClosingDialogue:
-    - Thank you, child. My aching bones feel a little less cold now
+    - 'Thank you, child. '
+    - My aching bones feel a little less cold now.
   isClick: 1
 --- !u!65 &1318348775
 BoxCollider:
@@ -27071,6 +27075,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1344833812}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1348719547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2803755644363713445, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_Name
+      value: Salmon_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.435383
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7163242
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6977676
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288507662793961759, guid: 57188d8d04d56fe4594f4ce0e41b2cf6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -88.496
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57188d8d04d56fe4594f4ce0e41b2cf6, type: 3}
 --- !u!1001 &1350942666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27799,7 +27872,7 @@ Transform:
   m_Children:
   - {fileID: 912178480}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1396611240 stripped
 Transform:
@@ -28577,14 +28650,35 @@ MonoBehaviour:
     wantedStone: 0
     wantedBerries: 2
     wantedFish: 2
-    OpeningCharacterID: 000000000100000001000000
+    OpeningCharacterID: 000000000100000001000000000000000100000001000000
     OpeningDialogue:
     - "Hey Aunt Betty, it\u2019s getting late. You peckish?"
-    - 'A little. '
-    - Could you grab us some fish and berries for dinner?
-    ClosingCharacterID: 01000000
+    - ...aren't we always?
+    - You know, because we're birds...?
+    - Bahaha, good one, you're so funny.
+    - Ugh, nevermind, just go get us grub.
+    - Some fish and berries would be nice.
+    ClosingCharacterID: 000000000100000001000000000000000000000001000000000000000100000001000000
     ClosingDialogue:
-    - "Thank you, Yaga. \n"
+    - 'This is gonna be one good meal!
+
+'
+    - 'Thank you, Yaga. '
+    - " To be honest\u2026 I don\u2019t know what I\u2019d do without you\u2026\n"
+    - "I\u2019m always here for you, always!\n"
+    - "You\u2019re pretty fun to be around, you know?\n"
+    - 'Atleast that makes one of us.
+
+'
+    - 'Hey-
+
+'
+    - 'Just tugging your feathers.
+
+'
+    - 'Now come inside, before the food gets cold.
+
+'
   isClick: 1
 --- !u!65 &1471771627
 BoxCollider:
@@ -29364,9 +29458,11 @@ MonoBehaviour:
     OpeningDialogue:
     - "Seems the blizzard swept away my fishing rod too! \n"
     - "Gotta build a new one real quick. \r"
-    ClosingCharacterID: 00000000
+    ClosingCharacterID: 000000000000000000000000
     ClosingDialogue:
     - And ... done!
+    - Now, it is time for my favourite part of the day!
+    - Let's catch some fish!
   isClick: 1
 --- !u!65 &1542036447
 BoxCollider:
@@ -32602,7 +32698,7 @@ Transform:
   m_Children:
   - {fileID: 687732635}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1764717284
 PrefabInstance:
@@ -38242,7 +38338,7 @@ RectTransform:
   - {fileID: 1970721800}
   - {fileID: 2125658990}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39906,7 +40002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &5172878250821732988
 MeshFilter:
   m_ObjectHideFlags: 0
