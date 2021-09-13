@@ -13,6 +13,9 @@ public class InteractionManager : MonoBehaviour
     public GameObject BettySpeechBubble;
     public Text PlayerText;
     public Text BettyText;
+    public GameObject endscreen;
+    public GameObject endbg;
+    public GameObject endtext;
 
     [Header("Interactables References")]
     public GameObject particles;
@@ -25,10 +28,12 @@ public class InteractionManager : MonoBehaviour
     public Vector3 chairpos;
     public GameObject chair;
     public GameObject rod;
+    public GameObject fishingspot;
 
     public GameObject BettyTaskID2;
     public GameObject BettyTaskID3;
     public GameObject BettyTaskID6;
+
     
 
     [Header("Other Variables")]
@@ -272,11 +277,18 @@ public class InteractionManager : MonoBehaviour
             
 
         }
+        else if (taskID == 6)
+        {
+            StartCoroutine(PauseTOENd());
+        }
         else if (taskID == 7)
         {
             taskcounter++;
+
             chair.gameObject.transform.localPosition = chairpos;
             chair.gameObject.transform.localEulerAngles = Vector3.zero;
+            fishingspot.GetComponent<Fishing>().isEnabled = true;
+            fishingspot.GetComponent<BoxCollider>().center = new Vector3(fishingspot.GetComponent<BoxCollider>().center.x, fishingspot.GetComponent<BoxCollider>().center.y, 1.1f);
             rod.gameObject.SetActive(true);
             GameObject particle = Instantiate(particles, new Vector3(rod.transform.position.x - 3, rod.transform.position.y + 4, rod.transform.position.z - 3), Quaternion.identity);
             Destroy(particle, 1);
@@ -285,6 +297,19 @@ public class InteractionManager : MonoBehaviour
         
     }
 
+    public IEnumerator PauseTOENd()
+    {
+        endscreen.SetActive(true);
+        player.canMove = false;
+        endbg.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        endtext.SetActive(true);
+        
+        
+
+    }
     public IEnumerator BettyPause(int task)
     {
         
