@@ -27,6 +27,7 @@ public class InteractionManager : MonoBehaviour
     public GameObject bridgebroke;
 
     public GameObject fireplacefix;
+    public GameObject fireplace;
 
     public Vector3 chairpos;
     public GameObject chair;
@@ -218,7 +219,7 @@ public class InteractionManager : MonoBehaviour
                     BettySpeechObject.SetActive(false);
                 }
 
-                StopAllCoroutines();
+                
                 StartCoroutine(AnimateSentence(sentence, PlayerText));
 
             }
@@ -233,7 +234,7 @@ public class InteractionManager : MonoBehaviour
                     PlayerSpeechObject.SetActive(false);
                 }
 
-                StopAllCoroutines();
+                
                 StartCoroutine(AnimateSentence(sentence, BettyText));
 
             }
@@ -283,8 +284,11 @@ public class InteractionManager : MonoBehaviour
         {
             taskcounter++;
             fireplacefix.SetActive(true);
+            fireplace.GetComponent<Fireplace>().isEnabled = true;
+            
             GameObject particle = Instantiate(particles, new Vector3(fireplacefix.transform.position.x - 1, fireplacefix.transform.position.y + 1, fireplacefix.transform.position.z - 1), Quaternion.identity);
             Destroy(particle, 1);
+            
         }
         else if (taskID == 2)
         {
@@ -325,6 +329,7 @@ public class InteractionManager : MonoBehaviour
         
     }
 
+   
     public IEnumerator PauseTOENd()
     {
         endscreen.SetActive(true);

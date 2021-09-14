@@ -11,6 +11,7 @@ public class Fishing : MonoBehaviour
     public GameObject line;
     public Transform dropzone;
     public GameManager manager;
+    public float collectiondistance;
 
     public Queue<GameObject> fishes;
 
@@ -33,31 +34,33 @@ public class Fishing : MonoBehaviour
 
         if (isEnabled)
         {
-
-            clickcounter++;
-
-            if (clickcounter == 1)
+            if (Vector3.Distance(this.transform.position, manager.player.GetComponent<Transform>().transform.position) < collectiondistance)
             {
-                line.transform.localEulerAngles = new Vector3(16, -4, 0);
-            }
-            else if (clickcounter == 2)
-            {
-                line.transform.localEulerAngles = new Vector3(36, -20, 0);
-            }
-            if (clickcounter == 3)
-            {
-                line.transform.localEulerAngles = Vector3.zero;
-                //instantiate fish at position
-                GameObject salmon = Instantiate(FISH, dropzone.position, Quaternion.identity);
-                fishes.Enqueue(salmon);
+                clickcounter++;
 
-                if (fishes.Count >= 4)
+                if (clickcounter == 1)
                 {
-                    GameObject discard = fishes.Dequeue();
-                    Destroy(discard);
+                    line.transform.localEulerAngles = new Vector3(16, -4, 0);
                 }
+                else if (clickcounter == 2)
+                {
+                    line.transform.localEulerAngles = new Vector3(36, -20, 0);
+                }
+                if (clickcounter == 3)
+                {
+                    line.transform.localEulerAngles = Vector3.zero;
+                    //instantiate fish at position
+                    GameObject salmon = Instantiate(FISH, dropzone.position, Quaternion.identity);
+                    fishes.Enqueue(salmon);
 
-                clickcounter = 0;
+                    if (fishes.Count >= 4)
+                    {
+                        GameObject discard = fishes.Dequeue();
+                        Destroy(discard);
+                    }
+
+                    clickcounter = 0;
+                }
             }
 
         }
@@ -68,9 +71,35 @@ public class Fishing : MonoBehaviour
     {
         if (isEnabled)
         {
-            manager.cursorstate = 1;
+            if (Vector3.Distance(this.transform.position, manager.player.GetComponent<Transform>().transform.position) < collectiondistance)
+            {
+                manager.gameObject.GetComponent<GameManager>().cursorstate = 1;
 
-            
+            }
+            else
+            {
+                manager.gameObject.GetComponent<GameManager>().cursorstate = 2;
+            }
+
+
+        }
+    }
+
+    public void OnMouseOver()
+    {
+        if (isEnabled)
+        {
+            if (Vector3.Distance(this.transform.position, manager.player.GetComponent<Transform>().transform.position) < collectiondistance)
+            {
+                manager.gameObject.GetComponent<GameManager>().cursorstate = 1;
+
+            }
+            else
+            {
+                manager.gameObject.GetComponent<GameManager>().cursorstate = 2;
+            }
+
+
         }
     }
 
@@ -78,7 +107,7 @@ public class Fishing : MonoBehaviour
     {
         if (isEnabled)
         {
-            if (manager.cursorstate == 1)
+            if (manager.cursorstate == 1 || manager.cursorstate == 2)
             {
                 manager.cursorstate = 0;
             }

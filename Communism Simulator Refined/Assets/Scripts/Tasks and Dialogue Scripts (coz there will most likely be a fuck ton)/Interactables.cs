@@ -167,6 +167,15 @@ public class Interactables : MonoBehaviour
                 }
             }
 
+            if (data.TaskID == 6)
+            {
+                if (rm.hasCookedFish)
+
+                {
+                    completedRequirements++;
+                }
+            }
+
             if (completedRequirements >= data.NumOfRequirements)
             {
                 //you fulfill all requirements
@@ -318,6 +327,33 @@ public class Interactables : MonoBehaviour
                         numberofStrings++;
                     }
                 }
+
+                if (data.TaskID == 6)
+                {
+                    if (numberofStrings > 0)
+                    {
+                        if (data.NumOfRequirements - numberofStrings == 1)
+                        {
+                            fish += " and ";
+                        }
+                        else
+                        {
+                            fish += ", ";
+                        }
+                    }
+
+
+
+                    if (rm.fishNum > 0)
+                    {
+                        fish = "to cook a fish";
+                    }
+                    else
+                    {
+                        fish = "a fish to cook";
+                    }
+                }
+
 
                 ponder += wood + stone + berries + fish + ".";
 

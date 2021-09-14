@@ -17,7 +17,7 @@ public class ResourceManager : MonoBehaviour
     public int stoneNum = 0;
     public int berriesNum = 0;
     public int fishNum = 0;
-
+    public bool hasCookedFish;
 
 
     void Start()
