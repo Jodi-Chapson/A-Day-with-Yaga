@@ -164,6 +164,8 @@ public class Interactables : MonoBehaviour
                 if (rm.fishNum >= data.wantedFish)
                 {
                     completedRequirements++;
+
+                    
                 }
             }
 
@@ -336,21 +338,18 @@ public class Interactables : MonoBehaviour
                         {
                             fish += " and ";
                         }
-                        else
-                        {
-                            fish += ", ";
-                        }
+                        
                     }
-
+                    
 
 
                     if (rm.fishNum > 0)
                     {
-                        fish = "to cook a fish";
+                        fish += "to cook a fish";
                     }
                     else
                     {
-                        fish = "a fish to cook";
+                        fish += "a fish to cook";
                     }
                 }
 
