@@ -52,7 +52,7 @@ public class Collectibles : MonoBehaviour
         if (canCollect)
         {            
 
-            if (Vector3.Distance(transform.position, player.position) < rm.collectionDistance + 0.5)
+            if (Vector3.Distance(transform.position, player.position) < rm.collectionDistance)
             {
 
                 ps.enableEmission = true;
@@ -65,10 +65,7 @@ public class Collectibles : MonoBehaviour
     }
     public void CollectResource()
     {
-        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1)
-        {
-            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
-        }
+        
 
         if (resourcetype == 0)
         {
@@ -111,17 +108,51 @@ public class Collectibles : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1 || rm.gameObject.GetComponent<GameManager>().cursorstate == 2)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+            
+        }
     }
 
     public void OnMouseEnter()
     {
-        rm.gameObject.GetComponent<GameManager>().cursorstate = 1;
+        if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance + distancemod)
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 1;
+
+        }
+        else
+        {
+            rm.gameObject.GetComponent<GameManager>().cursorstate = 2;
+        }
+
+
+    }
+
+    public void OnMouseOver()
+    {
+        if (Vector3.Distance(this.transform.position, player.position) < rm.collectionDistance + distancemod)
+        {
+            if (rm.gameObject.GetComponent<GameManager>().cursorstate == 2)
+            {
+
+                rm.gameObject.GetComponent<GameManager>().cursorstate = 1;
+            }
+
+        }
+        else
+        {
+            if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1)
+            {
+                rm.gameObject.GetComponent<GameManager>().cursorstate = 2;
+            }
+        }
     }
 
     public void OnMouseExit()
     {
-        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1)
+        if (rm.gameObject.GetComponent<GameManager>().cursorstate == 1 || rm.gameObject.GetComponent<GameManager>().cursorstate == 2)
         {
             rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
         }

@@ -27,16 +27,56 @@ public class Interactables : MonoBehaviour
     {
         if (isClick)
         {
-            rm.gameObject.GetComponent<GameManager>().cursorstate = 2;
+            if (Vector3.Distance(this.transform.position, player.transform.position) < data.triggerdistance)
+            {
+                rm.gameObject.GetComponent<GameManager>().cursorstate = 3;
+
+            }
+            else
+            {
+                rm.gameObject.GetComponent<GameManager>().cursorstate = 4;
+            }
+
+                    
         }
         
     }
 
+    private void OnMouseOver()
+    {
+        if (isClick)
+        {
+            if (Vector3.Distance(this.transform.position, player.transform.position) < data.triggerdistance)
+            {
+                if (rm.gameObject.GetComponent<GameManager>().cursorstate == 4)
+                        {
+
+                    rm.gameObject.GetComponent<GameManager>().cursorstate = 3;
+                }
+
+            }
+            else
+            {
+                if (rm.gameObject.GetComponent<GameManager>().cursorstate == 3)
+                {
+
+                    rm.gameObject.GetComponent<GameManager>().cursorstate = 4;
+                }
+            }
+
+
+        }
+    }
+
     public void OnMouseExit()
     {
-        if(isClick && rm.gameObject.GetComponent<GameManager>().cursorstate == 2)
+
+        if (isClick)
         {
-            rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+            if (rm.gameObject.GetComponent<GameManager>().cursorstate == 3 || rm.gameObject.GetComponent<GameManager>().cursorstate == 4)
+            {
+                rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+            }
         }
     }
 
@@ -140,6 +180,16 @@ public class Interactables : MonoBehaviour
                 //any effects of the task are set in motion
                 //im.ConcludeInteraction(data.TaskID);
                 im.StartDialogue(1, data);
+
+
+                if (isClick)
+                {
+                    if (rm.gameObject.GetComponent<GameManager>().cursorstate == 3 || rm.gameObject.GetComponent<GameManager>().cursorstate == 4)
+                    {
+                        rm.gameObject.GetComponent<GameManager>().cursorstate = 0;
+                    }
+                }
+
                 Destroy(this.GetComponent<Interactables>());
             }
             else if (completedRequirements < data.NumOfRequirements)

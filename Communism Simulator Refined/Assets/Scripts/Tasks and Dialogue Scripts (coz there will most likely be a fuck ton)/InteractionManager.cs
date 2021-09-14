@@ -184,7 +184,7 @@ public class InteractionManager : MonoBehaviour
         {
 
 
-            if (dialogue.Count == 1)
+            
             {
                 //on the last speech bubble
                 if (immediateeffect && isConclusion)
