@@ -34,14 +34,14 @@ public class ResourceManager : MonoBehaviour
         berries.text = "X " + berriesNum.ToString();
         fish.text = "X " + fishNum.ToString();
 
-        if (Input.GetKeyDown("h"))
+        /*if (Input.GetKeyDown("h"))
         {
             //h for hax
             woodNum += 10;
             stoneNum += 10;
             berriesNum += 10;
             fishNum += 10;
-        }
+        }*/
 
 
         //wood.text = woodNum + "/" + woodmax;
