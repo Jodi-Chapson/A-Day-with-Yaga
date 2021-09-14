@@ -332,24 +332,28 @@ public class Interactables : MonoBehaviour
 
                 if (data.TaskID == 6)
                 {
-                    if (numberofStrings > 0)
+                    if (!rm.hasCookedFish)
                     {
-                        if (data.NumOfRequirements - numberofStrings == 1)
+
+                        if (numberofStrings > 0)
                         {
-                            fish += " and ";
+                            if (data.NumOfRequirements - numberofStrings == 1)
+                            {
+                                fish += " and ";
+                            }
+
                         }
-                        
-                    }
-                    
 
 
-                    if (rm.fishNum > 0)
-                    {
-                        fish += "to cook a fish";
-                    }
-                    else
-                    {
-                        fish += "a fish to cook";
+
+                        if (rm.fishNum > 0)
+                        {
+                            fish += "to cook a fish";
+                        }
+                        else
+                        {
+                            fish += "a fish to cook";
+                        }
                     }
                 }
 
