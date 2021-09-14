@@ -38,6 +38,14 @@ public class InteractionManager : MonoBehaviour
     public GameObject BettyTaskID3;
     public GameObject BettyTaskID6;
 
+    public GameObject feederbroken;
+    public GameObject feederfixed;
+    public GameObject task1;
+    public GameObject task2;
+    public GameObject berries;
+
+    public GameObject fishbowl;
+
     
 
     [Header("Other Variables")]
@@ -325,6 +333,23 @@ public class InteractionManager : MonoBehaviour
             GameObject particle = Instantiate(particles, new Vector3(rod.transform.position.x - 3, rod.transform.position.y + 4, rod.transform.position.z - 3), Quaternion.identity);
             Destroy(particle, 1);
         }
+        else if (taskID == 8)
+        {
+            feederbroken.SetActive(false);
+            feederfixed.SetActive(true);
+            task1.SetActive(false);
+            task2.SetActive(true);
+            StartCoroutine(BettyPause(3));
+
+        }
+        else if (taskID == 10)
+        {
+            berries.SetActive(true);
+        }
+        else if (taskID == 11)
+        {
+            fishbowl.SetActive(true);
+        }
         
         
     }
@@ -355,6 +380,11 @@ public class InteractionManager : MonoBehaviour
         else if (task == 2)
         {
             BettyTaskID6.GetComponent<Interactables>().TriggerInteraction();
+            firsttext = false;
+        }
+        else if (task == 3)
+        {
+            task2.GetComponent<Interactables>().TriggerInteraction();
             firsttext = false;
         }
     }
