@@ -1708,6 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7844a48d48e9348a3d773f4f3f11eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1 &1104377108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,7 +2698,7 @@ GameObject:
   - component: {fileID: 1703942762}
   - component: {fileID: 1703942761}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2715,6 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d69f1b591b6d84c8c019557e9e8dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenelevel: 0
 --- !u!4 &1703942762
 Transform:
   m_ObjectHideFlags: 0

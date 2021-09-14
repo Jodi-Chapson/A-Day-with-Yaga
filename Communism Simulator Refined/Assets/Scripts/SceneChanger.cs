@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public int scenelevel;
     public void Scenechanger(int level)
     {
         Time.timeScale = 1f;

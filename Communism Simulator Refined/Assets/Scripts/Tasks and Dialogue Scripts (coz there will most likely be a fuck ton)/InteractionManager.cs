@@ -16,6 +16,9 @@ public class InteractionManager : MonoBehaviour
     public GameObject endscreen;
     public GameObject endbg;
     public GameObject endtext;
+    public string currentsentence;
+    public int currentID;
+    public bool isAnimating;
 
     [Header("Interactables References")]
     public GameObject particles;
@@ -157,58 +160,83 @@ public class InteractionManager : MonoBehaviour
 
     public void NextDialogue()
     {
-
-        player.canMove = false;
         
-        if (dialogue.Count == 1)
+        player.canMove = false;
+
+        if (isAnimating)
         {
-            //on the last speech bubble
-            if (immediateeffect && isConclusion)
-            {
-                ConcludeInteraction(concludingTask);
-                isConclusion = false;
-            }
-        }
-
-        if (dialogue.Count == 0)
-        {
-            //end the dialogue
-            EndDialogue();
-            return;
-        }
-
-        string sentence = dialogue.Dequeue();
-        int id = speakerID.Dequeue();
-
-        if (id == 0)
-        {
-            //yaga is speaking
-
-            PlayerSpeechObject.SetActive(true);
-            activedialogue = PlayerSpeechObject;
-            if (BettySpeechObject.activeSelf == true)
-            {
-                BettySpeechObject.SetActive(false);
-            }
-
+            
             StopAllCoroutines();
-            StartCoroutine(AnimateSentence(sentence, PlayerText));
+            isAnimating = false;
 
-        }
-        else if (id == 1)
-        {
-            //betty is speaking
-
-            BettySpeechObject.SetActive(true);
-            activedialogue = BettySpeechObject;
-            if (PlayerSpeechObject.activeSelf == true)
+            if (currentID == 0)
             {
-                 PlayerSpeechObject.SetActive(false);
+                PlayerText.text = currentsentence;
+            }
+            else if (currentID == 1)
+            {
+                BettyText.text = currentsentence;
+            }
+        
+        
+        }
+        else
+        {
+
+
+            if (dialogue.Count == 1)
+            {
+                //on the last speech bubble
+                if (immediateeffect && isConclusion)
+                {
+                    ConcludeInteraction(concludingTask);
+                    isConclusion = false;
+                }
             }
 
-            StopAllCoroutines();
-            StartCoroutine(AnimateSentence(sentence, BettyText));
+            if (dialogue.Count == 0)
+            {
+                //end the dialogue
+                EndDialogue();
+                return;
+            }
 
+            string sentence = dialogue.Dequeue();
+            int id = speakerID.Dequeue();
+
+            currentsentence = sentence;
+            currentID = id;
+
+            if (id == 0)
+            {
+                //yaga is speaking
+
+                PlayerSpeechObject.SetActive(true);
+                activedialogue = PlayerSpeechObject;
+                if (BettySpeechObject.activeSelf == true)
+                {
+                    BettySpeechObject.SetActive(false);
+                }
+
+                StopAllCoroutines();
+                StartCoroutine(AnimateSentence(sentence, PlayerText));
+
+            }
+            else if (id == 1)
+            {
+                //betty is speaking
+
+                BettySpeechObject.SetActive(true);
+                activedialogue = BettySpeechObject;
+                if (PlayerSpeechObject.activeSelf == true)
+                {
+                    PlayerSpeechObject.SetActive(false);
+                }
+
+                StopAllCoroutines();
+                StartCoroutine(AnimateSentence(sentence, BettyText));
+
+            }
         }
 
     }
@@ -329,6 +357,8 @@ public class InteractionManager : MonoBehaviour
 
     public IEnumerator AnimateSentence(string dialogue, Text targettext)
     {
+        isAnimating = true;
+        
         targettext.text = "";
 
         foreach (char letter in dialogue.ToCharArray())
@@ -337,5 +367,6 @@ public class InteractionManager : MonoBehaviour
             yield return new WaitForSeconds(0.04f);
         }
 
+        isAnimating = false;
     }
 }
