@@ -26,7 +26,7 @@ public class LightManager : MonoBehaviour
         IM = GameObject.Find("Game Manager").GetComponent<InteractionManager>();
         sun.intensity = 0.7f;
         sun.color = new Color32(170, 210, 219, 255);
-        RenderSettings.ambientIntensity = 0.7f;
+        RenderSettings.ambientIntensity = 0.85f;
         lanternLights = GameObject.FindGameObjectsWithTag("Lantern_Light");
         foreach(GameObject gm in lanternLights)
         {
@@ -86,7 +86,7 @@ public class LightManager : MonoBehaviour
         }
         if (IM.taskcounter == 5)
         {
-            
+            sun.intensity = Mathf.Lerp(0.7f, 0.6f, 1);
             currentAngle = sun.transform.eulerAngles;
             currentAngle = new Vector3(
              Mathf.LerpAngle(currentAngle.x, targetAngle5.x, 1),
@@ -103,15 +103,15 @@ public class LightManager : MonoBehaviour
         }
         if (IM.taskcounter == 6)
         {
-            sun.intensity = Mathf.Lerp(0.7f, 0.4f, 1f);
+            sun.intensity = Mathf.Lerp(0.6f, 0.5f, 1);
             currentAngle = sun.transform.eulerAngles;
             currentAngle = new Vector3(
              Mathf.LerpAngle(currentAngle.x, targetAngle6.x, 1f),
              Mathf.LerpAngle(currentAngle.y, targetAngle6.y, 1f),
              Mathf.LerpAngle(currentAngle.z, targetAngle6.z, 1f));
             sun.transform.eulerAngles = currentAngle;
-            sun.color = Color32.Lerp(new Color32(255, 72, 0, 255), new Color32(255, 0, 0, 255), 1);
-            RenderSettings.ambientIntensity = 0.35f;
+            sun.color = Color32.Lerp(new Color32(255, 39, 0, 255), new Color32(255, 0, 0, 255), 1);
+            RenderSettings.ambientIntensity = 0.45f;
             currentAngle = Vector3.zero;
         }
     }
