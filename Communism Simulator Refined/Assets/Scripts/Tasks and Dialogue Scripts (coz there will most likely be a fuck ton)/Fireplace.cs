@@ -73,13 +73,33 @@ public class Fireplace : MonoBehaviour
                     }
                     else
                     {
-                        rm.fishNum--;
-                        fish.SetActive(true);
-                        fish.GetComponent<MeshRenderer>().material = fish1;
-                        StartCoroutine(CookingTimer());
+                        if (rm.fishNum > 0)
+                        {
+
+                            rm.fishNum--;
+                            fish.SetActive(true);
+                            fish.GetComponent<MeshRenderer>().material = fish1;
+                            StartCoroutine(CookingTimer());
 
 
-                        isCooking = true;
+                            isCooking = true;
+                        }
+                        else
+                        {
+                            rm.GetComponent<InteractionManager>().dialogue.Clear();
+                            rm.GetComponent<InteractionManager>().speakerID.Clear();
+
+                            string fishneeded = "I need a fish to cook.";
+
+                            rm.GetComponent<InteractionManager>().dialogue.Enqueue(fishneeded);
+                            rm.GetComponent<InteractionManager>().speakerID.Enqueue(0);
+
+                            rm.GetComponent<InteractionManager>().NextDialogue();
+                            rm.GetComponent<InteractionManager>().dialogueActive = true;
+                            rm.GetComponent<InteractionManager>().firsttext = true;
+
+                           
+                        }
                     }
 
 
